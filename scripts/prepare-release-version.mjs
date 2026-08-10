@@ -11,6 +11,7 @@ const packageDirectories = [
   "packages/core-pack",
   "packages/community-sfx"
 ];
+const dependencyWorkspaceDirectories = ["examples/nextjs"];
 const packageNames = new Set([
   "@wubble/manifest",
   "@wubble/sounds",
@@ -26,16 +27,16 @@ if (!isReleaseVersion(version) || (mode && mode !== "--check")) {
   console.error("Usage: node scripts/prepare-release-version.mjs <semver-version> [--check]");
   process.exitCode = 1;
 } else {
-  const packages = await Promise.all(packageDirectories.map(async (directory) => {
+  const packages = await Promise.all([...packageDirectories, ...dependencyWorkspaceDirectories].map(async (directory) => {
     const file = path.join(process.cwd(), directory, "package.json");
-    return { file, value: JSON.parse(await readFile(file, "utf8")) };
+    return { file, directory, value: JSON.parse(await readFile(file, "utf8")) };
   }));
 
-  const prepared = packages.map(({ file, value }) => ({
+  const prepared = packages.map(({ file, directory, value }) => ({
     file,
     value: {
       ...value,
-      version,
+      ...(packageDirectories.includes(directory) ? { version } : {}),
       dependencies: rewriteInternalVersions(value.dependencies, version)
     }
   }));
@@ -50,7 +51,7 @@ if (!isReleaseVersion(version) || (mode && mode !== "--check")) {
     }
   } else {
     await Promise.all(prepared.map(({ file, value }) => writeFile(file, `${JSON.stringify(value, null, 2)}\n`, "utf8")));
-    console.log(`Prepared ${prepared.length} public packages for ${version}. Review and commit the package manifests before dispatching a release.`);
+    console.log(`Prepared ${packageDirectories.length} public packages and ${dependencyWorkspaceDirectories.length} release example for ${version}. Review and commit the package manifests before dispatching a release.`);
   }
 }
 

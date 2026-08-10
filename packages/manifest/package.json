@@ -1,6 +1,6 @@
 {
   "name": "@wubble/manifest",
-  "version": "0.0.0-development",
+  "version": "0.1.0",
   "description": "Manifest schema and validation for Wubble UI Sounds.",
   "type": "module",
   "license": "Apache-2.0",

@@ -1,6 +1,6 @@
 {
   "name": "@wubble/react",
-  "version": "0.0.0-development",
+  "version": "0.1.0",
   "description": "React bindings for Wubble UI Sounds.",
   "type": "module",
   "license": "Apache-2.0",
@@ -17,7 +17,7 @@
     "src"
   ],
   "dependencies": {
-    "@wubble/sounds": "0.0.0-development"
+    "@wubble/sounds": "0.1.0"
   },
   "peerDependencies": {
     "react": ">=18.2.0 <20.0.0"

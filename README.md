@@ -458,11 +458,11 @@ See [the accessibility contract](docs/ACCESSIBILITY.md) for the required applica
 
 ## Current status
 
-The local runtime, signed local archive verification/install/upgrade, web and React Native CLI exports, React bindings, examples, trusted-key registry, and ordered local codec sources are working. Wubble exports a compiled 16-cue local delivery set with MP3, WebM Opus, and AAC/M4A assets when an app needs it. Before public publication, retain the source-license record privately, complete the remaining browser/device and accessibility matrix, configure registry publishing and release-key custody, and complete the operational release checks.
+The local runtime, signed local archive verification/install/upgrade, web and React Native CLI exports, React bindings, examples, trusted-key registry, and ordered local codec sources are available in this release. Wubble exports a compiled 16-cue local delivery set with MP3, WebM Opus, and AAC/M4A assets when an app needs it. See [the release checklist](RELEASE_CHECKLIST.md) for the operational checks applied to each published version.
 
 ## Release Rehearsal
 
-Before a public release, prepare the same version in every public workspace and commit that change with its changelog entry:
+For every public release, prepare the same version in every public workspace and commit that change with its changelog entry:
 
 ```bash
 npm run release:version -- 0.1.0

@@ -45,7 +45,7 @@ clear, while the public developer experience stays one package and one command.
 
 | Library | What it contains | What an app ships |
 | --- | --- | --- |
-| **Wubble Core** | 16 canonical app events in MP3, WebM Opus, and AAC/M4A | A compact, 120 KiB local pack |
+| **Default app pack** | 16 canonical app events in MP3, WebM Opus, and AAC/M4A | A compact, 120 KiB local pack |
 | **Full Wubble library** | **936 sound designs**: 78 semantic cues across 12 personalities, in both MP3 and Ogg | Only the chosen 16-cue personality export, up to 240 KB |
 
 The full catalog has not gone anywhere: it contains **1,872 portable audio

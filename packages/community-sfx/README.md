@@ -1,4 +1,4 @@
-# Wubble Community SFX Catalog
+# Wubble Full Audio Catalog
 
 This is the CC0 audio catalog used by `@wubble/ui-sounds`. It is installed
 automatically with the main package, so developers do not need to choose or
@@ -18,7 +18,7 @@ npx wubble-ui-sounds export \
 Replace `minimal` with `soft`, `glass`, `arcade`, `mechanical`, `organic`, `dreamy`,
 `scifi`, `rubber`, `cinematic`, `studio`, or `zen`. Each export selects only 16
 Wubble semantic cues. Community packs preserve both MP3 and Ogg and declare a 240
-KB budget; the default Wubble Core export remains the compact 120 KB option. The application serves
+KB budget; the default export remains the compact 120 KB option. The application serves
 those exported files locally and makes no runtime request to Wubble.
 
 The complete upstream catalog remains under `catalog/` for use in platforms or

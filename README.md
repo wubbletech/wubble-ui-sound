@@ -9,10 +9,10 @@
 </p>
 
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/code-Apache--2.0-147D78?style=flat-square" alt="Apache-2.0 licensed code" /></a>
-  <img src="https://img.shields.io/badge/runtime-local--first-16263B?style=flat-square" alt="Local-first runtime" />
-  <img src="https://img.shields.io/badge/platform-web%20%2B%20React%20Native-147D78?style=flat-square" alt="Web and React Native" />
-  <img src="https://img.shields.io/badge/workflow-review--first-E5684B?style=flat-square" alt="Review-first workflow" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/code-Apache--2.0-F4A300?style=flat-square" alt="Apache-2.0 licensed code" /></a>
+  <img src="https://img.shields.io/badge/runtime-local--first-00BFD8?style=flat-square" alt="Local-first runtime" />
+  <img src="https://img.shields.io/badge/platform-web%20%2B%20React%20Native-C62ACB?style=flat-square" alt="Web and React Native" />
+  <img src="https://img.shields.io/badge/workflow-review--first-FF6A28?style=flat-square" alt="Review-first workflow" />
 </p>
 
 Wubble gives product moments a stable semantic name, then ships the selected

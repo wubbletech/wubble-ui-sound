@@ -4,7 +4,10 @@
   "description": "React bindings for Wubble UI Sounds.",
   "type": "module",
   "license": "Apache-2.0",
-  "repository": "https://github.com/wubbletech/wubble-ui-sound.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wubbletech/wubble-ui-sound.git"
+  },
   "homepage": "https://github.com/wubbletech/wubble-ui-sound#readme",
   "bugs": "https://github.com/wubbletech/wubble-ui-sound/issues",
   "exports": {

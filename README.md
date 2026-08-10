@@ -373,7 +373,7 @@ Production manifests can keep an MP3 primary and add ordered local codec sources
 }
 ```
 
-The private compiler creates and budgets every declared local file. Verify the source-selection path on each supported device before release; the [browser matrix](docs/BROWSER_MATRIX.md) records that evidence.
+The local exporter creates and budgets every declared local file. Verify the source-selection path on each supported device before release; the [browser matrix](docs/BROWSER_MATRIX.md) records that evidence.
 
 ## React and Next.js
 
@@ -458,7 +458,7 @@ See [the accessibility contract](docs/ACCESSIBILITY.md) for the required applica
 
 ## Current status
 
-The local runtime, signed local archive verification/install/upgrade, web and React Native CLI exports, React bindings, examples, trusted-key registry, and ordered local codec sources are available in this release. Wubble exports a compiled 16-cue local delivery set with MP3, WebM Opus, and AAC/M4A assets when an app needs it. See [the release checklist](RELEASE_CHECKLIST.md) for the operational checks applied to each published version.
+The local runtime, signed local archive verification/install/upgrade, web and React Native CLI exports, React bindings, examples, trusted-key registry, and ordered local codec sources are available in this release. Wubble exports a compiled 16-cue local delivery set with MP3, WebM Opus, and AAC/M4A assets when an app needs it.
 
 ## Release Rehearsal
 

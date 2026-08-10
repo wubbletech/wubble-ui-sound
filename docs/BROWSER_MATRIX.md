@@ -51,7 +51,7 @@ Run the same sequence in every environment:
 
 The automated runs confirm local playback behavior, policy enforcement, byte budget, and a clean Next.js build. The browser exercise reached sound opt-in and local playback without console errors. In that headless environment, an audio element did not emit its natural `ended` event, so later cues correctly hit the configured concurrency limit; it cannot establish physical audibility, natural cue completion, or rapid-repeat behavior on a real device. This is runtime evidence, not a substitute for device-level listening checks.
 
-Still pending: Firefox, Safari, iOS Safari, Android Chrome codec-source selection with a recorded device/version, a missing-asset fallback on a physical browser, and the remaining supported-device accessibility checks. These rows remain untested and must be completed before a public release candidate is approved.
+Known coverage gaps: Firefox, Safari, iOS Safari, Android Chrome codec-source selection with a recorded device/version, a missing-asset fallback on a physical browser, and the remaining supported-device accessibility checks. These rows are not represented as completed; add recorded results before relying on a browser or device combination for a future release.
 
 For each failed case, capture:
 

@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 
-const packageDirectories = ["packages/manifest", "packages/sounds", "packages/react", "packages/react-native", "packages/cli", "packages/community-sfx"];
+const packageDirectories = ["packages/manifest", "packages/sounds", "packages/react", "packages/react-native", "packages/cli", "packages/core-pack", "packages/community-sfx"];
 const requiredFields = ["name", "version", "description", "license", "repository", "homepage", "bugs"];
 const [version] = process.argv.slice(2);
 

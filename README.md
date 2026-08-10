@@ -36,16 +36,17 @@ approves a reviewed change.
 developers do not have to map every button, state, and outcome to an audio file
 by hand.
 
-## The Full Sound Library
+## One Install. The Full Wubble Library.
 
-The 16-cue Core pack is the **small export Wubble places in an app**, not the
-size of the library. The full CC0 catalog is available through
-[`@wubble/community-sfx`](packages/community-sfx/README.md).
+Install `@wubble/ui-sounds` once. It includes the complete Wubble library; there
+is no second package for a developer to discover, compare, or install. Wubble
+keeps the catalog as a managed internal dependency so its CC0 provenance remains
+clear, while the public developer experience stays one package and one command.
 
 | Library | What it contains | What an app ships |
 | --- | --- | --- |
 | **Wubble Core** | 16 canonical app events in MP3, WebM Opus, and AAC/M4A | A compact, 120 KiB local pack |
-| **Wubble Community SFX** | **936 sound designs**: 78 semantic cues across 12 personalities, in both MP3 and Ogg | Only the chosen 16-cue personality export, up to 240 KB |
+| **Full Wubble library** | **936 sound designs**: 78 semantic cues across 12 personalities, in both MP3 and Ogg | Only the chosen 16-cue personality export, up to 240 KB |
 
 The full catalog has not gone anywhere: it contains **1,872 portable audio
 files** because each of the 936 designs has MP3 and Ogg versions. Core keeps the
@@ -65,8 +66,9 @@ without forcing every website or app to ship it all.
 
 | You need | Start here |
 | --- | --- |
-| A compact, consistent baseline | `@wubble/ui-sounds` and the included 16-cue Core pack |
-| The complete library | [`@wubble/community-sfx`](packages/community-sfx/README.md): 936 sound designs across 12 personalities |
+| Any app or website | `npm install @wubble/ui-sounds` - the full library comes with it |
+| A compact, consistent output | Wubble exports the included 16-cue Core pack by default |
+| A specific sonic personality | Choose from the installed 936-design catalog when the app needs it |
 | A working reference | [vanilla](examples/vanilla/), [Next.js](examples/nextjs/), or [React Native](examples/react-native/) examples |
 | Existing app recommendations | [`wubble-ui-sounds add`](#developer-workflow) or [`wubble-ui-sounds audit`](#developer-workflow) |
 

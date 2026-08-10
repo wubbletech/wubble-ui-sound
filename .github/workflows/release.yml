@@ -60,4 +60,6 @@ jobs:
       - run: npm publish --workspace @wubble/sounds --access public --provenance
       - run: npm publish --workspace @wubble/react --access public --provenance
       - run: npm publish --workspace @wubble/react-native --access public --provenance
+      - run: npm publish --workspace @wubble/core-pack --access public --provenance
+      - run: npm publish --workspace @wubble/community-sfx --access public --provenance
       - run: npm publish --workspace @wubble/ui-sounds --access public --provenance

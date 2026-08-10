@@ -21,6 +21,7 @@
   ],
   "dependencies": {
     "@babel/parser": "^7.28.5",
+    "@wubble/community-sfx": "0.0.0-development",
     "@wubble/core-pack": "0.0.0-development",
     "@wubble/manifest": "0.0.0-development",
     "@wubble/sounds": "0.0.0-development"

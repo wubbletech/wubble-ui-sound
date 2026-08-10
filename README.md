@@ -24,17 +24,26 @@ service, no API key, and no source code leaves the developer's machine.
 
 ```bash
 npm install @wubble/ui-sounds
-npx wubble-ui-sounds add . --scope src/app,src/features --cache --setup
+npx wubble-ui-sounds start .
 ```
 
-Wubble does the discovery work: it scans local source, groups recommendations by
-app flow, explains each recommendation, and creates a normal Git patch for
-review. It never edits application source until the developer explicitly
-approves a reviewed change.
+`start` is the whole first run. It scans local source, groups recommendations by
+app flow, exports compact local audio after a developer picks moments, and
+creates a normal Git patch for review. It never edits application source until
+the developer explicitly approves a reviewed change.
 
 **The difference:** Wubble reads the app or website and proposes a sound plan;
 developers do not have to map every button, state, and outcome to an audio file
 by hand.
+
+| 1. Scan | 2. Decide | 3. Land |
+| --- | --- | --- |
+| Wubble finds meaningful UI moments in local source. | The developer accepts, rejects, or narrows each app flow. | Wubble writes local audio and a normal review patch. |
+| No code leaves the machine. | It also recommends haptic, visual-only, or no feedback when sound would be noisy. | Source remains unchanged until an explicit `--apply`. |
+
+**See it work:** run `npm run demo:agent`, then open the local URL it prints to
+compare all 16 semantic events with and without local audio.
+For the exact terminal flow, read [First run](docs/FIRST_RUN.md).
 
 ## One Install. The Full Wubble Library.
 
@@ -42,10 +51,12 @@ Install `@wubble/ui-sounds` once. It is one library, one command, and **936 soun
 designs** across 78 semantic cues and 12 personalities. Every design is available
 in MP3 and Ogg, for 1,872 portable audio files in total.
 
-Wubble automatically selects and exports the local files an app needs. Most apps
-ship a compact 16-cue set around 120 KiB; a chosen personality can use up to 240
-KB. Developers get the entire library without making their users download audio
-that the app will never play.
+The first run deliberately maps the common **16 semantic application events** and
+exports only that local delivery set, usually around 120 KiB. The full collection
+is available from the same install when a team intentionally chooses a sound
+direction. Wubble does not claim to infer a brand's taste from source code; the
+scanner chooses *where feedback belongs*, while the developer retains the final
+sonic decision. End users download only the files the app uses.
 
 ## Why Wubble
 
@@ -61,10 +72,10 @@ that the app will never play.
 | You need | Start here |
 | --- | --- |
 | Any app or website | `npm install @wubble/ui-sounds` - the complete library comes with it |
-| A compact app bundle | Wubble automatically exports only the relevant local files |
-| A distinct sonic personality | Wubble can select from all 936 designs when the app needs it |
+| A compact app bundle | `wubble-ui-sounds start .` exports the 16-event local delivery set only after review |
+| A distinct sound direction | Run `wubble-ui-sounds directions`, then add `--style <direction>` to `start` |
 | A working reference | [vanilla](examples/vanilla/), [Next.js](examples/nextjs/), or [React Native](examples/react-native/) examples |
-| Existing app recommendations | [`wubble-ui-sounds add`](#developer-workflow) or [`wubble-ui-sounds audit`](#developer-workflow) |
+| Existing app recommendations | [`wubble-ui-sounds start`](#developer-workflow) or [`wubble-ui-sounds audit`](#developer-workflow) |
 
 The source code and documentation are licensed under [Apache-2.0](LICENSE).
 Audio assets have separate terms; see [Audio Licensing](AUDIO-LICENSES.md).
@@ -98,7 +109,7 @@ flowchart LR
 ### Run the guided scan
 
 ```bash
-npx wubble-ui-sounds add . --scope src/app,src/features --cache --setup
+npx wubble-ui-sounds start . --scope src/app,src/features --cache
 ```
 
 | Wubble writes locally | Why it matters |
@@ -116,17 +127,17 @@ scan is reliable.
 <details>
 <summary><strong>Advanced CLI reference: explicit audits, previews, managed packs, and rollback</strong></summary>
 
-### Guided Add
+### Guided Start
 
-For the shortest path, let the guided local workflow inspect the app and export
-the included local sound library only when it is needed:
+For the shortest path, let the guided local workflow inspect the app, ask which
+recommendations to keep, export local audio, and write a review patch:
 
 ```bash
-npx wubble-ui-sounds add /absolute/path/to/customer-app \
-  --scope src/app,src/features --cache --setup
+npx wubble-ui-sounds start /absolute/path/to/customer-app \
+  --scope src/app,src/features --cache
 ```
 
-`add` scans source files only on the developer's machine. It does not call an AI
+`start` scans source files only on the developer's machine. It does not call an AI
 model or upload source code. It groups detected moments by product flow, shows
 the source location, a short local code context, and why it made the
 recommendation. It labels sound moments as a safe-patch candidate or a
@@ -137,7 +148,7 @@ records deliberate non-sound guidance:
 toast outcomes, and `none` for navigation that should not be made noisy by
 default.
 
-By default, the command is review-first. It writes these local artifacts under
+The command is review-first. It writes these local artifacts under
 `.wubble-ui-sounds/` without editing application source:
 
 - `latest-audit.json`: the read-only detection record.
@@ -155,7 +166,7 @@ git apply .wubble-ui-sounds/recommended.patch
 ```
 
 Use `--patch review/wubble-ui-sounds.patch` to write it elsewhere. The
-alternative `--apply` path still requires an explicit terminal confirmation,
+`--apply` path still requires an explicit terminal confirmation,
 checks the preview and source-file hashes, and writes a rollback record before
 changing code. In CI, use `--select all|none|<candidate-ids>`; add `--yes` only
 when an intentional non-interactive apply is required. `--force` replaces an

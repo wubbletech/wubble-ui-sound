@@ -133,14 +133,49 @@ test("CLI audits semantic product moments without changing the project", async (
   assert.equal(await readFile(source, "utf8"), before);
 });
 
-test("CLI setup exports the included Wubble Core pack", async (context) => {
+test("CLI setup exports the included local Wubble audio", async (context) => {
   const target = await mkdtemp(path.join(os.tmpdir(), "wubble-ui-sounds-setup-"));
   context.after(() => rm(target, { recursive: true, force: true }));
 
   const setup = await runCli("setup", target);
-  assert.match(setup.stdout, /Exported wubble-core r1/);
+  assert.match(setup.stdout, /Exported Wubble local audio/);
+  assert.match(setup.stdout, /Delivery set: default direction, revision 1/);
   assert.match(await readFile(path.join(target, "src", "lib", "wubble-ui-sounds.js"), "utf8"), /from "@wubble\/ui-sounds"/);
   assert.match(await readFile(path.join(target, "wubble.ui-sounds.yml"), "utf8"), /pack: wubble-core/);
+
+  const styledTarget = await mkdtemp(path.join(os.tmpdir(), "wubble-ui-sounds-style-"));
+  context.after(() => rm(styledTarget, { recursive: true, force: true }));
+  const styled = await runCli("setup", styledTarget, "--style", "minimal");
+  assert.match(styled.stdout, /Delivery set: minimal direction, revision 1/);
+  assert.match(await readFile(path.join(styledTarget, "wubble.ui-sounds.yml"), "utf8"), /pack: wubble-community-minimal/);
+});
+
+test("CLI start is the review-first first run", async (context) => {
+  const target = await mkdtemp(path.join(os.tmpdir(), "wubble-ui-sounds-start-"));
+  context.after(() => rm(target, { recursive: true, force: true }));
+  const source = path.join(target, "src", "save-profile.jsx");
+  await mkdir(path.dirname(source), { recursive: true });
+  await writeFile(source, `export function SaveProfile() {
+  async function handleSaveProfile() {
+    await saveProfile();
+  }
+  return <button onClick={handleSaveProfile}>Save profile</button>;
+}
+`, "utf8");
+  const before = await readFile(source, "utf8");
+
+  const started = await runCli("start", target, "--select", "all");
+  assert.match(started.stdout, /Wubble UI Sounds: local scan complete/);
+  assert.match(started.stdout, /Exported compact local audio/);
+  assert.match(started.stdout, /Next: review the patch/);
+  assert.equal(await readFile(source, "utf8"), before);
+  assert.match(await readFile(path.join(target, ".wubble-ui-sounds", "recommended.patch"), "utf8"), /feedback\.processing/);
+
+  const help = await runCli("start", "--help");
+  assert.match(help.stdout, /The recommended first run/);
+  const directions = await runCli("directions");
+  assert.match(directions.stdout, /Included Wubble sound directions/);
+  assert.match(directions.stdout, /minimal, soft, glass/);
 });
 
 test("CLI add lets a developer review and explicitly apply an async outcome patch", async (context) => {
@@ -158,8 +193,9 @@ test("CLI add lets a developer review and explicitly apply an async outcome patc
   const before = await readFile(source, "utf8");
 
   const reviewed = await runCli("add", target, "--select", "all", "--setup");
-  assert.match(reviewed.stdout, /Found 1 reviewed moments; 1 sound recommendation selected/);
-  assert.match(reviewed.stdout, /Exported wubble-core r1/);
+  assert.match(reviewed.stdout, /local scan complete/);
+  assert.match(reviewed.stdout, /Scanned 1 source file.*Found 1 feedback moment; 1 sound recommendation selected/);
+  assert.match(reviewed.stdout, /Exported compact local audio/);
   assert.match(reviewed.stdout, /Saved sound plan:/);
   assert.match(reviewed.stdout, /1 safe handler patch across 1 file/);
   assert.match(reviewed.stdout, /PR-ready patch:/);
@@ -222,7 +258,7 @@ test("complex product review merges multiple safe handlers in one file into one 
   await cp(complexFixture, target, { recursive: true });
 
   const reviewed = await runCli("add", target, "--scope", "app", "--select", "all", "--setup");
-  assert.match(reviewed.stdout, /Found 14 reviewed moments; 11 sound recommendations selected/);
+  assert.match(reviewed.stdout, /Found 14 feedback moments; 11 sound recommendations selected/);
   assert.match(reviewed.stdout, /4 safe handler patches across 3 files; 7 need manual review/);
   assert.match(reviewed.stdout, /Implementation: Server or non-client code/);
   const preview = JSON.parse(await readFile(path.join(target, ".wubble-ui-sounds", "patch-preview.json"), "utf8"));
@@ -248,11 +284,13 @@ test("CLI exports safely and refuses to overwrite customer changes", async (cont
   await writeFile(existingPage, "export default function Page() { return null; }\n", "utf8");
 
   const exportPlan = await runCli("export", "--source", sourceDirectory, "--target", target, "--dry-run");
-  assert.match(exportPlan.stdout, /Planned export signal r1/);
+  assert.match(exportPlan.stdout, /Planned export Wubble local audio/);
+  assert.match(exportPlan.stdout, /Delivery set: default direction, revision 1/);
   await assert.rejects(readFile(path.join(target, "wubble.ui-sounds.yml"), "utf8"));
 
   const firstExport = await runCli("export", "--source", sourceDirectory, "--target", target);
-  assert.match(firstExport.stdout, /Exported signal r1/);
+  assert.match(firstExport.stdout, /Exported Wubble local audio/);
+  assert.match(firstExport.stdout, /Delivery set: default direction, revision 1/);
 
   const integrationPath = path.join(target, "src/lib/wubble-ui-sounds.js");
   const configPath = path.join(target, "wubble.ui-sounds.yml");
@@ -356,7 +394,8 @@ test("CLI exports a React Native pack with a Metro-safe local asset map", async 
   await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
 
   const exportResult = await runCli("export", "--source", packDirectory, "--target", target, "--platform", "react-native");
-  assert.match(exportResult.stdout, /Exported signal r1/);
+  assert.match(exportResult.stdout, /Exported Wubble local audio/);
+  assert.match(exportResult.stdout, /Delivery set: default direction, revision 1/);
   const nativeManifestPath = path.join(target, "src/assets/wubble/signal/manifest.json");
   const nativeManifest = JSON.parse(await readFile(nativeManifestPath, "utf8"));
   assert.match(nativeManifest.events.tap.file, /^tap\.[a-f\d]{12}\.m4a$/);
@@ -412,7 +451,8 @@ test("CLI verifies and installs a signed release archive", async (context) => {
   }, null, 2)}\n`);
 
   const installation = await runCli("install", "--archive", archivePath, "--trusted-keys", trustedKeysPath, "--target", target);
-  assert.match(installation.stdout, /Exported signal r1/);
+  assert.match(installation.stdout, /Exported Wubble local audio/);
+  assert.match(installation.stdout, /Delivery set: default direction, revision 1/);
   assert.match(installation.stdout, /Verified archive: [a-f\d]{64} \(release-2026-08\)/);
   assert.match(await readFile(path.join(target, "public/wubble/signal/manifest.json"), "utf8"), /"schemaVersion": 1/);
 

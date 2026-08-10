@@ -13,12 +13,18 @@ import { exportPack, inspectPack, installPackArchive, rollbackPack, upgradePack,
 import { verifyPackArchive } from "./archive.js";
 
 const require = createRequire(import.meta.url);
+const SOUND_DIRECTIONS = ["minimal", "soft", "glass", "arcade", "mechanical", "organic", "dreamy", "scifi", "rubber", "cinematic", "studio", "zen"];
 
 const HELP = `Wubble UI Sounds
 
+Quick start:
+  wubble-ui-sounds start .
+
 Usage:
-  wubble-ui-sounds setup [app-directory] [--platform web|react-native] [--budget-kb <number>] [--dry-run] [--force]
-  wubble-ui-sounds add [app-directory] [--scope <path,...>] [--cache] [--setup] [--patch <file>] [--apply] [--select <all|none|ids>] [--yes] [--force] [--dry-run]
+  wubble-ui-sounds start [app-directory] [--scope <path,...>] [--cache] [--style <direction>] [--select <all|none|ids>] [--patch <file>] [--apply] [--yes] [--force] [--dry-run]
+  wubble-ui-sounds directions
+  wubble-ui-sounds setup [app-directory] [--platform web|react-native] [--style <direction>] [--budget-kb <number>] [--dry-run] [--force]
+  wubble-ui-sounds add [app-directory] [--scope <path,...>] [--cache] [--setup] [--style <direction>] [--patch <file>] [--apply] [--select <all|none|ids>] [--yes] [--force] [--dry-run]
   wubble-ui-sounds validate <manifest> [--budget-kb <number>]
   wubble-ui-sounds inspect <manifest> [--budget-kb <number>]
   wubble-ui-sounds audit [project-directory] [--scope <path,...>] [--cache] [--format text|json]
@@ -33,8 +39,10 @@ Usage:
   wubble-ui-sounds install --archive <pack.wubblepack> (--public-key <trusted-public-key.pem> | --trusted-keys <trusted-keys.json>) --target <app-directory> [--platform web|react-native] [--budget-kb <number>] [--dry-run] [--force]
 
 Commands:
-  setup     Export the included Wubble Core pack into an application.
-  add       Find meaningful sound moments, ask what to add, then preview or apply reviewed patches.
+  start     The recommended first run: scan an app, review recommendations, export local audio, and prepare a patch.
+  directions  List the included sound directions for teams that want to tune the local delivery set.
+  setup     Export Wubble's compact local audio set into an application.
+  add       The configurable form of start for established workflows and automation.
   validate  Verify the manifest, local paths, files, hashes, WAV duration metadata, and pack budget.
   inspect   Print a concise inventory of the pack and its asset budget.
   audit     Read a codebase and propose reviewable feedback moments. It never changes application files.
@@ -59,6 +67,10 @@ async function main(argv) {
   if (command === "help") {
     const topic = argv[1];
     console.log(topic ? commandHelp(topic) : HELP);
+    return 0;
+  }
+  if (argumentsList.length === 1 && (argumentsList[0] === "--help" || argumentsList[0] === "-h")) {
+    console.log(commandHelp(command));
     return 0;
   }
 
@@ -97,18 +109,23 @@ async function main(argv) {
       return 0;
     }
 
-    if (command === "add") {
+    if (command === "start" || command === "add") {
       const target = options.positionals[0] ?? process.cwd();
-      const result = await addUiSounds({ target, scopes: options.scopes, cache: options.cache, select: options.select, setup: options.setup, patch: options.patch, platform: options.platform, apply: options.apply, yes: options.yes, force: options.force, dryRun: options.dryRun });
+      const result = await addUiSounds({ target, scopes: options.scopes, cache: options.cache, select: options.select, setup: command === "start" || options.setup, patch: options.patch, platform: options.platform, style: options.style, apply: options.apply, yes: options.yes, force: options.force, dryRun: options.dryRun });
       printAdd(result);
+      return 0;
+    }
+
+    if (command === "directions") {
+      printDirections();
       return 0;
     }
 
     if (command === "setup") {
       const target = options.positionals[0] ?? process.cwd();
-      const coreManifest = require.resolve("@wubble/core-pack/manifest");
+      const source = resolveIncludedSource(options.style);
       const result = await exportPack({
-        source: path.dirname(coreManifest),
+        source,
         target: path.resolve(target),
         budgetKb: options.budgetKb,
         platform: options.platform,
@@ -249,11 +266,11 @@ async function main(argv) {
 }
 
 function parseOptions(argumentsList) {
-  const options = { positionals: [], source: undefined, target: undefined, pack: undefined, revision: undefined, platform: undefined, archive: undefined, publicKey: undefined, trustedKeys: undefined, budgetKb: undefined, format: "text", plan: undefined, approval: undefined, preview: undefined, confirm: undefined, record: undefined, select: undefined, output: undefined, patch: undefined, scopes: undefined, cache: false, setup: false, apply: false, yes: false, force: false, dryRun: false };
+  const options = { positionals: [], source: undefined, target: undefined, pack: undefined, revision: undefined, platform: undefined, style: undefined, archive: undefined, publicKey: undefined, trustedKeys: undefined, budgetKb: undefined, format: "text", plan: undefined, approval: undefined, preview: undefined, confirm: undefined, record: undefined, select: undefined, output: undefined, patch: undefined, scopes: undefined, cache: false, setup: false, apply: false, yes: false, force: false, dryRun: false };
 
   for (let index = 0; index < argumentsList.length; index += 1) {
     const argument = argumentsList[index];
-    if (argument === "--source" || argument === "--target" || argument === "--pack" || argument === "--revision" || argument === "--platform" || argument === "--archive" || argument === "--public-key" || argument === "--trusted-keys" || argument === "--budget-kb" || argument === "--plan" || argument === "--approval" || argument === "--preview" || argument === "--confirm" || argument === "--record" || argument === "--select" || argument === "--output" || argument === "--patch" || argument === "--scope") {
+    if (argument === "--source" || argument === "--target" || argument === "--pack" || argument === "--revision" || argument === "--platform" || argument === "--style" || argument === "--archive" || argument === "--public-key" || argument === "--trusted-keys" || argument === "--budget-kb" || argument === "--plan" || argument === "--approval" || argument === "--preview" || argument === "--confirm" || argument === "--record" || argument === "--select" || argument === "--output" || argument === "--patch" || argument === "--scope") {
       const value = argumentsList[index + 1];
       if (!value || value.startsWith("--")) {
         return { error: `${argument} requires a value.` };
@@ -269,6 +286,10 @@ function parseOptions(argumentsList) {
       if (argument === "--select") options.select = value;
       if (argument === "--output") options.output = value;
       if (argument === "--patch") options.patch = value;
+      if (argument === "--style") {
+        if (!SOUND_DIRECTIONS.includes(value)) return { error: `--style must be one of: ${SOUND_DIRECTIONS.join(", ")}.` };
+        options.style = value;
+      }
       if (argument === "--scope") options.scopes = value.split(",").map((scope) => scope.trim()).filter(Boolean);
       if (argument === "--pack") options.pack = value;
       if (argument === "--archive") options.archive = value;
@@ -385,7 +406,8 @@ function printInspection(report) {
 }
 
 function printExport(result) {
-  console.log(`${result.dryRun ? "Planned export" : "Exported"} ${result.packId} r${result.revision} to ${result.target}`);
+  console.log(`${result.dryRun ? "Planned export" : "Exported"} Wubble local audio to ${result.target}`);
+  console.log(`Delivery set: ${formatDirection(result.packId)} direction, revision ${result.revision}.`);
   for (const file of result.planned) console.log(`> ${file}`);
   if (result.dryRun) return;
   for (const file of result.written) console.log(`+ ${file}`);
@@ -441,7 +463,8 @@ function printFeedbackRollback(result) {
 
 /** @param {{ report: any, selected: Array<any>, auditPath: string, planPath: string, setup: any, preview?: any, patchPath?: string, application?: any, dryRun: boolean }} result */
 function printAdd(result) {
-  console.log(`Found ${result.report.summary.recommended} reviewed moments; ${result.selected.length} sound recommendation${result.selected.length === 1 ? "" : "s"} selected.`);
+  console.log("Wubble UI Sounds: local scan complete");
+  console.log(`Scanned ${result.report.scannedFiles} source file${result.report.scannedFiles === 1 ? "" : "s"}${result.report.framework ? ` (${result.report.framework})` : ""}. Found ${result.report.summary.recommended} feedback moment${result.report.summary.recommended === 1 ? "" : "s"}; ${result.selected.length} sound recommendation${result.selected.length === 1 ? "" : "s"} selected.`);
   for (const candidate of result.selected) {
     console.log(`+ ${candidate.group}: ${candidate.label} at ${candidate.location}`);
     if (candidate.context) console.log(`  ${candidate.context}`);
@@ -459,7 +482,7 @@ function printAdd(result) {
   }
   console.log(`${result.dryRun ? "Would save" : "Saved"} audit: ${result.auditPath}`);
   console.log(`${result.dryRun ? "Would save" : "Saved"} sound plan: ${result.planPath}`);
-  if (result.setup.state === "exported") console.log(`Exported ${result.setup.packId} r${result.setup.revision} so the reviewed patch has a local pack to import.`);
+  if (result.setup.state === "exported") console.log("Exported compact local audio so the reviewed patch has files to import.");
   if (result.setup.state === "missing") console.log("No local pack is exported yet. The review artifacts are ready; re-run with --setup before applying this patch.");
   const safeHandlers = countSafeHandlers(result.preview.preview.generatedEdits);
   const generatedFiles = new Set(result.preview.preview.generatedEdits.map((edit) => edit.file));
@@ -475,7 +498,7 @@ function printAdd(result) {
   if (result.patchPath) console.log(`PR-ready patch: ${result.patchPath}`);
   if (!result.dryRun) console.log(`Review confirmation SHA-256: ${result.preview.sha256}`);
   if (result.application) console.log(`${result.dryRun ? "Would apply" : "Applied"} reviewed source changes.`);
-  else console.log("Review the patch or preview before applying changes. Re-run with --apply in an interactive terminal when ready.");
+  else console.log("Next: review the patch. Source files stay unchanged until you re-run with --apply in an interactive terminal.");
 }
 
 /** @param {Array<any>} generatedEdits */
@@ -492,9 +515,28 @@ function countSafeHandlers(generatedEdits) {
 }
 
 function commandHelp(topic) {
-  if (topic === "add") return `wubble-ui-sounds add [app-directory]\n\nScans only local source files, groups meaningful moments by product flow, and asks which sound recommendations to keep. Each sound recommendation is labeled as a safe patch candidate or manual review. It never sends code anywhere. By default it saves a readable sound plan and a standard review patch; it does not change application source.\n\nExamples:\n  wubble-ui-sounds add\n  wubble-ui-sounds add . --scope src/app,src/features --cache --setup\n  wubble-ui-sounds add . --select all --patch review/wubble-ui-sounds.patch\n\nUse --setup to explicitly export Wubble Core when the app has no local integration. Use --apply only after reviewing the generated patch. It still refuses changed source files. Use --force only to replace an earlier local review artifact.`;
+  if (topic === "start") return `wubble-ui-sounds start [app-directory]\n\nThe recommended first run. It scans only local source files, groups meaningful moments by app flow, asks what to keep, exports compact local audio, and writes a standard review patch. It never uploads source code and never changes application files until the developer explicitly re-runs with --apply.\n\nExamples:\n  wubble-ui-sounds start\n  wubble-ui-sounds start . --scope src/app,src/features --cache\n  wubble-ui-sounds start . --style minimal\n  wubble-ui-sounds start . --select all --patch review/wubble-ui-sounds.patch\n\nRun wubble-ui-sounds directions to browse the included directions. Use --apply only after reviewing the generated patch. It refuses to apply when the reviewed source has changed. Use --force only to replace an earlier local review artifact.`;
+  if (topic === "add") return `wubble-ui-sounds add [app-directory]\n\nThe configurable form of the guided workflow. It scans only local source files, groups meaningful moments by app flow, and asks what to keep. Unlike start, add exports local audio only when --setup is passed or accepted interactively. It never sends code anywhere and does not change application source by default.\n\nExamples:\n  wubble-ui-sounds add\n  wubble-ui-sounds add . --scope src/app,src/features --cache --setup\n  wubble-ui-sounds add . --select all --patch review/wubble-ui-sounds.patch\n\nUse --apply only after reviewing the generated patch. It refuses to apply when the reviewed source has changed. Use --force only to replace an earlier local review artifact.`;
   if (topic === "audit") return `wubble-ui-sounds audit [app-directory]\n\nRead-only structural scan. Use --scope for selected folders and --cache to reuse unchanged local analysis results.`;
   return `No dedicated help for ${topic}. Run wubble-ui-sounds --help for every command.`;
+}
+
+function resolveIncludedSource(style) {
+  if (!style) return path.dirname(require.resolve("@wubble/core-pack/manifest"));
+  return path.join(path.dirname(require.resolve("@wubble/community-sfx")), `${style}.manifest.json`);
+}
+
+function formatDirection(packId) {
+  if (packId.startsWith("wubble-community-")) return packId.slice("wubble-community-".length);
+  return "default";
+}
+
+function printDirections() {
+  console.log("Included Wubble sound directions:");
+  console.log(`- ${SOUND_DIRECTIONS.join(", ")}`);
+  console.log("\nThe default direction is used when --style is omitted.");
+  console.log("Choose deliberately; Wubble scans where feedback belongs, not a brand's sound identity.");
+  console.log("\nExample:\n  wubble-ui-sounds start . --style minimal");
 }
 
 function printRevisionChange(action, result) {

@@ -15,7 +15,7 @@ const require = createRequire(import.meta.url);
 
 /**
  * Guides a developer from a local scan to reviewed, optional source changes.
- * @param {{ target: string, scopes?: string[], cache?: boolean, select?: string, setup?: boolean, patch?: string, platform?: "web" | "react-native", apply?: boolean, yes?: boolean, force?: boolean, dryRun?: boolean }} options
+ * @param {{ target: string, scopes?: string[], cache?: boolean, select?: string, setup?: boolean, patch?: string, platform?: "web" | "react-native", style?: string, apply?: boolean, yes?: boolean, force?: boolean, dryRun?: boolean }} options
  */
 export async function addUiSounds(options) {
   const root = path.resolve(options.target);
@@ -116,7 +116,7 @@ async function ensureLocalSetup(root, options) {
   if (!shouldSetup && process.stdin.isTTY && process.stdout.isTTY) {
     const terminal = createInterface({ input: process.stdin, output: process.stdout });
     try {
-      const answer = await terminal.question("\nNo local Wubble pack is exported yet. Export Wubble Core now? [Y/n] ");
+      const answer = await terminal.question("\nNo local Wubble audio is exported yet. Export the compact local set now? [Y/n] ");
       shouldSetup = !/^n(?:o)?$/i.test(answer.trim());
     } finally {
       terminal.close();
@@ -124,9 +124,11 @@ async function ensureLocalSetup(root, options) {
   }
   if (!shouldSetup) return { state: "missing", integration };
 
-  const coreManifest = require.resolve("@wubble/core-pack/manifest");
+  const source = options.style
+    ? path.join(path.dirname(require.resolve("@wubble/community-sfx")), `${options.style}.manifest.json`)
+    : path.dirname(require.resolve("@wubble/core-pack/manifest"));
   const result = await exportPack({
-    source: path.dirname(coreManifest),
+    source,
     target: root,
     platform: options.platform,
     force: options.force,

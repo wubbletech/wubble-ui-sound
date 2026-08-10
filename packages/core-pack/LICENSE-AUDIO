@@ -4,5 +4,5 @@ Copyright 2026 Wubble. All rights reserved.
 
 The audio files in `pack/assets/` are not licensed under the repository's
 Apache-2.0 license. You may use them only as included in an application built
-with `@wubble/core-pack`. You may not extract, sell, sublicense, or distribute
+with `@wubbleai/core-pack`. You may not extract, sell, sublicense, or distribute
 them separately from that package.

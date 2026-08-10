@@ -140,7 +140,7 @@ test("CLI setup exports the included local Wubble audio", async (context) => {
   const setup = await runCli("setup", target);
   assert.match(setup.stdout, /Exported Wubble local audio/);
   assert.match(setup.stdout, /Delivery set: default direction, revision 1/);
-  assert.match(await readFile(path.join(target, "src", "lib", "wubble-ui-sounds.js"), "utf8"), /from "@wubble\/ui-sounds"/);
+  assert.match(await readFile(path.join(target, "src", "lib", "wubble-ui-sounds.js"), "utf8"), /from "@wubbleai\/ui-sounds"/);
   assert.match(await readFile(path.join(target, "wubble.ui-sounds.yml"), "utf8"), /pack: wubble-core/);
 
   const styledTarget = await mkdtemp(path.join(os.tmpdir(), "wubble-ui-sounds-style-"));

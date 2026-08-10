@@ -1,5 +1,5 @@
 {
-  "name": "@wubble/ui-sounds",
+  "name": "@wubbleai/ui-sounds",
   "version": "0.1.0",
   "description": "Local-first UI sounds for web and mobile applications.",
   "type": "module",
@@ -21,10 +21,10 @@
   ],
   "dependencies": {
     "@babel/parser": "^7.28.5",
-    "@wubble/community-sfx": "0.1.0",
-    "@wubble/core-pack": "0.1.0",
-    "@wubble/manifest": "0.1.0",
-    "@wubble/sounds": "0.1.0"
+    "@wubbleai/community-sfx": "0.1.0",
+    "@wubbleai/core-pack": "0.1.0",
+    "@wubbleai/manifest": "0.1.0",
+    "@wubbleai/sounds": "0.1.0"
   },
   "engines": {
     "node": ">=20"

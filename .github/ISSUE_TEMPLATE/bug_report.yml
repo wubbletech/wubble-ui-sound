@@ -10,7 +10,7 @@ body:
     id: package
     attributes:
       label: Package and version
-      placeholder: "@wubble/sounds 0.1.0"
+      placeholder: "@wubbleai/sounds 0.1.0"
     validations:
       required: true
   - type: input

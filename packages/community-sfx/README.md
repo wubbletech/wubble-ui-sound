@@ -1,6 +1,6 @@
 # Wubble Full Audio Catalog
 
-This is the CC0 audio catalog used by `@wubble/ui-sounds`. It is installed
+This is the CC0 audio catalog used by `@wubbleai/ui-sounds`. It is installed
 automatically with the main package, so developers do not need to choose or
 install a second Wubble package. It contains 12 personalities, 78 upstream cues,
 and portable MP3/Ogg files. The original audio and license notice are preserved
@@ -9,9 +9,9 @@ in this package; see `UPSTREAM-NOTICE.md` and `LICENSE-AUDIO`.
 ## Install and export
 
 ```bash
-npm install @wubble/ui-sounds
+npm install @wubbleai/ui-sounds
 npx wubble-ui-sounds export \
-  --source node_modules/@wubble/community-sfx/minimal.manifest.json \
+  --source node_modules/@wubbleai/community-sfx/minimal.manifest.json \
   --target /absolute/path/to/customer-app
 ```
 

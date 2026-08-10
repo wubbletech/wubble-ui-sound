@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Pressable, Text, View } from "react-native";
-import { createNativeFeedbackClient } from "@wubble/react-native";
-import { createExpoFeedbackBridge } from "@wubble/react-native/expo";
+import { createNativeFeedbackClient } from "@wubbleai/react-native";
+import { createExpoFeedbackBridge } from "@wubbleai/react-native/expo";
 import manifest from "./wubble-manifest.json";
 
 const assets = {

@@ -13,15 +13,15 @@ Thanks for helping improve Wubble UI Sounds.
 npm run generate:fixtures
 npm run check
 npm test
-npm run build --workspace @wubble/nextjs-example
+npm run build --workspace @wubbleai/nextjs-example
 ```
 
 ## Package boundaries
 
-- `@wubble/manifest` owns the portable manifest contract.
-- `@wubble/sounds` owns framework-neutral playback behavior.
-- `@wubble/react` owns React-only integration.
-- `@wubble/ui-sounds` owns local developer tooling and file export.
+- `@wubbleai/manifest` owns the portable manifest contract.
+- `@wubbleai/sounds` owns framework-neutral playback behavior.
+- `@wubbleai/react` owns React-only integration.
+- `@wubbleai/ui-sounds` owns local developer tooling and file export.
 
 Do not introduce browser globals into the manifest package. Browser audio must remain optional, client-side, and unable to interrupt a product action.
 

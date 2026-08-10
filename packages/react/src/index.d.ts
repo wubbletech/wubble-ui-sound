@@ -1,8 +1,8 @@
 "use client";
 
 import type { MouseEvent, ReactNode } from "react";
-import type { FeedbackEvent, FeedbackManifest } from "@wubble/manifest";
-import type { FeedbackClient, PlaybackResult } from "@wubble/sounds";
+import type { FeedbackEvent, FeedbackManifest } from "@wubbleai/manifest";
+import type { FeedbackClient, PlaybackResult } from "@wubbleai/sounds";
 
 export interface FeedbackProviderProps {
   manifest: FeedbackManifest;

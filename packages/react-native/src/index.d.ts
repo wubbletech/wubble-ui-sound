@@ -1,4 +1,4 @@
-import type { FeedbackAssetVariant, FeedbackEvent, FeedbackManifest, FeedbackPolicy } from "@wubble/manifest";
+import type { FeedbackAssetVariant, FeedbackEvent, FeedbackManifest, FeedbackPolicy } from "@wubbleai/manifest";
 
 export type NativePlaybackResult =
   | { played: true }

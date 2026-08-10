@@ -28,7 +28,7 @@ export const auditCorpus = [
   { file: "generic.jsx", expected: [], source: `export function Help() { return <button>Help</button>; }` },
   { file: "search.jsx", expected: [], source: `function handleSearchInput(value) { setQuery(value); }` },
   { file: "hover.jsx", expected: [], source: `function handleMouseOver() { setHover(true); }` },
-  { file: "existing.jsx", expected: [], source: `import { createFeedbackClient } from "@wubble/ui-sounds"; async function handleSave() { await save(); }` }
+  { file: "existing.jsx", expected: [], source: `import { createFeedbackClient } from "@wubbleai/ui-sounds"; async function handleSave() { await save(); }` }
 ];
 
 export async function writeAuditCorpus(directory) {

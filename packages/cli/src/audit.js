@@ -477,7 +477,7 @@ function isGeneratedMetadataFile(name) {
 
 /** @param {string} contents */
 function usesWubbleFeedback(contents) {
-  return /(?:from\s+["'](?:@wubble\/(?:ui-sounds|sounds|react|react-native)|[^"']*wubble-ui-sounds(?:\.[cm]?[jt]sx?)?)["']|create(?:Native)?FeedbackClient|useAsyncFeedback)/.test(contents);
+  return /(?:from\s+["'](?:@wubbleai\/(?:ui-sounds|sounds|react|react-native)|[^"']*wubble-ui-sounds(?:\.[cm]?[jt]sx?)?)["']|create(?:Native)?FeedbackClient|useAsyncFeedback)/.test(contents);
 }
 
 /** @param {string[]} files */

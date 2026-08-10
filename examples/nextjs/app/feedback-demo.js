@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FeedbackProvider, FeedbackSettings, useAsyncFeedback, useFeedback } from "@wubble/react";
+import { FeedbackProvider, FeedbackSettings, useAsyncFeedback, useFeedback } from "@wubbleai/react";
 import { signalManifest } from "../src/lib/signal-manifest";
 
 const actionGroups = [

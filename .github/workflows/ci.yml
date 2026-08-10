@@ -27,6 +27,6 @@ jobs:
       - run: npm run generate:fixtures
       - run: npm run check
       - run: npm test
-      - run: npm run build --workspace @wubble/nextjs-example
+      - run: npm run build --workspace @wubbleai/nextjs-example
       - run: npm audit --audit-level=high
       - run: npm run release:smoke

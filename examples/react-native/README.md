@@ -5,7 +5,7 @@ This is the mobile integration shape, not a packaged app. Copy approved mobile p
 Install the runtime packages in an Expo application:
 
 ```bash
-npm install @wubble/react-native @wubble/manifest
+npm install @wubbleai/react-native @wubbleai/manifest
 npx expo install expo-audio expo-haptics
 ```
 

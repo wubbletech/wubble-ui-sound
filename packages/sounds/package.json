@@ -1,5 +1,5 @@
 {
-  "name": "@wubble/sounds",
+  "name": "@wubbleai/sounds",
   "version": "0.1.0",
   "description": "Local-first semantic UI sound playback for the web.",
   "type": "module",
@@ -17,7 +17,7 @@
     "src"
   ],
   "dependencies": {
-    "@wubble/manifest": "0.1.0"
+    "@wubbleai/manifest": "0.1.0"
   },
   "engines": {
     "node": ">=20"

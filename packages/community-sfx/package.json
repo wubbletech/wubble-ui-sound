@@ -1,7 +1,7 @@
 {
-  "name": "@wubble/community-sfx",
+  "name": "@wubbleai/community-sfx",
   "version": "0.1.0",
-  "description": "The CC0 Wubble audio catalog installed automatically with @wubble/ui-sounds.",
+  "description": "The CC0 Wubble audio catalog installed automatically with @wubbleai/ui-sounds.",
   "type": "module",
   "license": "CC0-1.0",
   "repository": {

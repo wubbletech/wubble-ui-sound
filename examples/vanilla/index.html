@@ -21,8 +21,8 @@
     <script type="importmap">
       {
         "imports": {
-          "@wubble/manifest": "/packages/manifest/src/index.js",
-          "@wubble/sounds": "/packages/sounds/src/index.js"
+          "@wubbleai/manifest": "/packages/manifest/src/index.js",
+          "@wubbleai/sounds": "/packages/sounds/src/index.js"
         }
       }
     </script>
@@ -42,7 +42,7 @@
       </section>
     </main>
     <script type="module">
-      import { createFeedbackClient } from "@wubble/sounds";
+      import { createFeedbackClient } from "@wubbleai/sounds";
 
       const manifest = await fetch("./public/wubble/signal/manifest.json").then((response) => response.json());
       const feedback = createFeedbackClient(manifest, {

@@ -4,7 +4,7 @@ This example keeps `app/page.js` as a Server Component and places every browser-
 
 ```bash
 npm install
-npm run dev --workspace @wubble/nextjs-example
+npm run dev --workspace @wubbleai/nextjs-example
 ```
 
 The local sample files belong in `public/wubble/signal/`. In a real application, use the Wubble CLI export flow; it creates content-hashed asset filenames so audio can be cached for a long time while `manifest.json` is revalidated more frequently.

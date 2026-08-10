@@ -11,14 +11,14 @@ import {
   useRef,
   useState
 } from "react";
-import { createFeedbackClient } from "@wubble/sounds";
+import { createFeedbackClient } from "@wubbleai/sounds";
 
 const FeedbackContext = createContext(null);
 
 /**
  * Provides one local-first feedback client and a persisted user preference.
  * This component is client-only; it does not access browser APIs during SSR.
- * @param {{ manifest: import("@wubble/manifest").FeedbackManifest, baseUrl?: string, children: import("react").ReactNode, defaultEnabled?: boolean, defaultVolume?: number, defaultReducedFeedback?: boolean, defaultQuietMode?: boolean, storageKey?: string, reducedFeedbackStorageKey?: string, quietModeStorageKey?: string }} props
+ * @param {{ manifest: import("@wubbleai/manifest").FeedbackManifest, baseUrl?: string, children: import("react").ReactNode, defaultEnabled?: boolean, defaultVolume?: number, defaultReducedFeedback?: boolean, defaultQuietMode?: boolean, storageKey?: string, reducedFeedbackStorageKey?: string, quietModeStorageKey?: string }} props
  */
 export function FeedbackProvider({
   manifest,
@@ -217,7 +217,7 @@ export function FeedbackSettings({ label = "Interface sounds", showVolume = true
 
 /**
  * A semantic button that plays feedback before invoking its optional click handler.
- * @param {{ event: import("@wubble/manifest").FeedbackEvent, children: import("react").ReactNode, onClick?: (event: import("react").MouseEvent<HTMLButtonElement>) => void, disabled?: boolean }} props
+ * @param {{ event: import("@wubbleai/manifest").FeedbackEvent, children: import("react").ReactNode, onClick?: (event: import("react").MouseEvent<HTMLButtonElement>) => void, disabled?: boolean }} props
  */
 export function FeedbackButton({ event, children, onClick, disabled = false }) {
   const { play } = useFeedback();
@@ -236,7 +236,7 @@ export function FeedbackButton({ event, children, onClick, disabled = false }) {
  * Runs an asynchronous product action with semantic pending, success, and error feedback.
  * The caller remains responsible for visible loading, success, and error states.
  * @template T
- * @param {{ play: (event: import("@wubble/manifest").FeedbackEvent) => Promise<import("@wubble/sounds").PlaybackResult>, action: () => T | Promise<T>, pendingEvent?: import("@wubble/manifest").FeedbackEvent, successEvent?: import("@wubble/manifest").FeedbackEvent, errorEvent?: import("@wubble/manifest").FeedbackEvent, onStateChange?: (state: "pending" | "success" | "error") => void }} options
+ * @param {{ play: (event: import("@wubbleai/manifest").FeedbackEvent) => Promise<import("@wubbleai/sounds").PlaybackResult>, action: () => T | Promise<T>, pendingEvent?: import("@wubbleai/manifest").FeedbackEvent, successEvent?: import("@wubbleai/manifest").FeedbackEvent, errorEvent?: import("@wubbleai/manifest").FeedbackEvent, onStateChange?: (state: "pending" | "success" | "error") => void }} options
  * @returns {Promise<T>}
  */
 export async function runFeedbackAction({
@@ -264,7 +264,7 @@ export async function runFeedbackAction({
 
 /**
  * Adds a standard semantic sound sequence to an asynchronous UI action.
- * @param {{ pendingEvent?: import("@wubble/manifest").FeedbackEvent, successEvent?: import("@wubble/manifest").FeedbackEvent, errorEvent?: import("@wubble/manifest").FeedbackEvent }} [options]
+ * @param {{ pendingEvent?: import("@wubbleai/manifest").FeedbackEvent, successEvent?: import("@wubbleai/manifest").FeedbackEvent, errorEvent?: import("@wubbleai/manifest").FeedbackEvent }} [options]
  */
 export function useAsyncFeedback(options = {}) {
   const { play } = useFeedback();

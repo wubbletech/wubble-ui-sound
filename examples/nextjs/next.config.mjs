@@ -1,5 +1,5 @@
 const nextConfig = {
-  transpilePackages: ["@wubble/manifest", "@wubble/react", "@wubble/sounds"]
+  transpilePackages: ["@wubbleai/manifest", "@wubbleai/react", "@wubbleai/sounds"]
 };
 
 export default nextConfig;

@@ -23,7 +23,7 @@ service, no API key, and no source code leaves the developer's machine.
 ## Add Sound in Seconds
 
 ```bash
-npm install @wubble/ui-sounds
+npm install @wubbleai/ui-sounds
 npx wubble-ui-sounds start .
 ```
 
@@ -47,7 +47,7 @@ For the exact terminal flow, read [First run](docs/FIRST_RUN.md).
 
 ## One Install. The Full Wubble Library.
 
-Install `@wubble/ui-sounds` once. It is one library, one command, and **936 sound
+Install `@wubbleai/ui-sounds` once. It is one library, one command, and **936 sound
 designs** across 78 semantic cues and 12 personalities. Every design is available
 in MP3 and Ogg, for 1,872 portable audio files in total.
 
@@ -71,7 +71,7 @@ sonic decision. End users download only the files the app uses.
 
 | You need | Start here |
 | --- | --- |
-| Any app or website | `npm install @wubble/ui-sounds` - the complete library comes with it |
+| Any app or website | `npm install @wubbleai/ui-sounds` - the complete library comes with it |
 | A compact app bundle | `wubble-ui-sounds start .` exports the 16-event local delivery set only after review |
 | A distinct sound direction | Run `wubble-ui-sounds directions`, then add `--style <direction>` to `start` |
 | A working reference | [vanilla](examples/vanilla/), [Next.js](examples/nextjs/), or [React Native](examples/react-native/) examples |
@@ -377,12 +377,12 @@ The private compiler creates and budgets every declared local file. Verify the s
 
 ## React and Next.js
 
-`@wubble/react` keeps audio inside a Client Component while the rest of a Next App Router page can remain server-rendered.
+`@wubbleai/react` keeps audio inside a Client Component while the rest of a Next App Router page can remain server-rendered.
 
 ```jsx
 "use client";
 
-import { FeedbackProvider, FeedbackSettings, useFeedback } from "@wubble/react";
+import { FeedbackProvider, FeedbackSettings, useFeedback } from "@wubbleai/react";
 import { feedbackManifest } from "@/lib/wubble-ui-sounds";
 
 export function ProductFeedback() {
@@ -407,7 +407,7 @@ See [the App Router example](examples/nextjs/README.md) for the complete local s
 Use `useAsyncFeedback` for actions that visibly enter a pending state, then complete or fail. It preserves the existing UI behavior and adds semantic local feedback around it.
 
 ```jsx
-import { useAsyncFeedback } from "@wubble/react";
+import { useAsyncFeedback } from "@wubbleai/react";
 
 function SaveDraftButton() {
   const save = useAsyncFeedback();
@@ -433,8 +433,8 @@ The [Next.js example](examples/nextjs/) includes a local release workspace that 
 The mobile runtime uses the same manifest and policy contract. Supply a static Metro asset map and a native bridge. For Expo, the optional bridge uses `expo-audio` and `expo-haptics`; it is not a runtime service dependency.
 
 ```jsx
-import { createNativeFeedbackClient } from "@wubble/react-native";
-import { createExpoFeedbackBridge } from "@wubble/react-native/expo";
+import { createNativeFeedbackClient } from "@wubbleai/react-native";
+import { createExpoFeedbackBridge } from "@wubbleai/react-native/expo";
 
 const bridge = await createExpoFeedbackBridge();
 const feedback = createNativeFeedbackClient(manifest, {

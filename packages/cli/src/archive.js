@@ -1,7 +1,7 @@
 import { createHash, createPublicKey, verify } from "node:crypto";
 import { gunzipSync } from "node:zlib";
 import path from "node:path";
-import { assertValidManifest, migrateManifest } from "@wubble/manifest";
+import { assertValidManifest, migrateManifest } from "@wubbleai/manifest";
 
 const ARCHIVE_FORMAT = "wubble-pack";
 const ARCHIVE_SCHEMA_VERSION = 1;

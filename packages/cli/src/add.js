@@ -125,8 +125,8 @@ async function ensureLocalSetup(root, options) {
   if (!shouldSetup) return { state: "missing", integration };
 
   const source = options.style
-    ? path.join(path.dirname(require.resolve("@wubble/community-sfx")), `${options.style}.manifest.json`)
-    : path.dirname(require.resolve("@wubble/core-pack/manifest"));
+    ? path.join(path.dirname(require.resolve("@wubbleai/community-sfx")), `${options.style}.manifest.json`)
+    : path.dirname(require.resolve("@wubbleai/core-pack/manifest"));
   const result = await exportPack({
     source,
     target: root,

@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "pack": {
+    "id": "wubble-community-scifi",
+    "revision": 1,
+    "budgetKb": 240
+  },
+  "defaults": {
+    "gain": 0.55,
+    "maxConcurrentSounds": 1
+  },
+  "provenance": {
+    "upstream": "UI SFX",
+    "sourceCommit": "2001f3dac2d1cf86ad99cbad5cef222c3a8b9082",
+    "audioLicense": "CC0-1.0"
+  },
+  "events": {
+    "tap": {
+      "file": "catalog/sounds/scifi/press.mp3",
+      "durationMs": 214,
+      "sha256": "d89d0a49a6c76ae84b7b623f69c067c693d565a4b05e28f9d1e1be0c335be588",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/scifi/press.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 214,
+          "sha256": "9c0591488f72db77ef4862134cd7bb04deb595471b1476b74ffbe3e7805d2f78"
+        }
+      ]
+    },
+    "toggleOn": {
+      "file": "catalog/sounds/scifi/toggle-on.mp3",
+      "durationMs": 320,
+      "sha256": "2f5ac451e043c08e23d14fe1bda7555ed8a627a469e834ab4300279ffe4ea135",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/scifi/toggle-on.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 320,
+          "sha256": "da0b6eb704f5a099d50b675f99f91045d5e4420f3c0adf34c0eaf8e5ace4ce04"
+        }
+      ]
+    },
+    "toggleOff": {
+      "file": "catalog/sounds/scifi/toggle-off.mp3",
+      "durationMs": 308,
+      "sha256": "598186c2d47cb0c970a450ef3943521b6e07b20fd506edde9b401d30cc115fc1",
+      "gain": 0.18,
+      "sources": [
+        {
+          "file": "catalog/sounds/scifi/toggle-off.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 308,
+          "sha256": "acce3a3e24856cfde7ecf011d794f61efded411af3579bd2b9e512889ff462c5"
+        }
+      ]
+    },
+    "select": {
+      "file": "catalog/sounds/scifi/select.mp3",
+      "durationMs": 312,
+      "sha256": "d8d902e25590b487597a70ce10920bd66c10726d994537f842eb6fd71f7c5354",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/scifi/select.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 312,
+          "sha256": "17c7a7b562056c6bf446cde58128028c5a6b5af5012377c98cf8cf6cd54b3a92"
+        }
+      ]
+    },
+    "open": {
+      "file": "catalog/sounds/scifi/open.mp3",
+      "durationMs": 358,
+      "sha256": "020ac06bab42eb33c9a30a1a59fab44162a7af539fb4280708623218637c65b0",
+      "gain": 0.18,
+      "sources": [
+        {
+          "file": "catalog/sounds/scifi/open.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 358,
+          "sha256": "835f90cbc50c58fe6ee4210383d24a71c17dd084c6f665f3ef40a3fb6486b955"
+        }
+      ]
+    },
+    "close": {
+      "file": "catalog/sounds/scifi/close.mp3",
+      "durationMs": 336,
+      "sha256": "4de884dcd7a88b9d36f71ca4bdafda265e92a17e58341a1414153b3872ab3ab9",
+      "gain": 0.17,
+      "sources": [
+        {
+          "file": "catalog/sounds/scifi/close.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 336,
+          "sha256": "35ca0c729fad53a952b93db2fa0c023274168af1c71f724ee26ed340cbdb4f30"
+        }
+      ]
+    },
+    "navigate": {
+      "file": "catalog/sounds/scifi/forward.mp3",
+      "durationMs": 318,
+      "sha256": "bd2ae2c6f5475cb29e96e93a414b53cd2fed64684af4003409e407d0dd2f0a70",
+      "gain": 0.17,
+      "sources": [
+        {
+          "file": "catalog/sounds/scifi/forward.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 318,
+          "sha256": "668cd8ae21a0e3fc3d7d5be2326fec9ae995f432c4b01fea988735b72810fe02"
+        }
+      ]
+    },
+    "success": {
+      "file": "catalog/sounds/scifi/success.mp3",
+      "durationMs": 617,
+      "sha256": "7756b7a4c4dcdcdc1f0191bffbce15292f224f558db1d0732c0a370629946450",
+      "gain": 0.23,
+      "sources": [
+        {
+          "file": "catalog/sounds/scifi/success.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 617,
+          "sha256": "b29e34f3ce52bc2e3853d2936dcb24b92b8aa53f302b50f2affc6f9d61a57c4c"
+        }
+      ]
+    },
+    "error": {
+      "file": "catalog/sounds/scifi/error.mp3",
+      "durationMs": 518,
+      "sha256": "9d33c403d9ee661b247e0171ba4c78c1c8454855543009635d05371bc80ccf27",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/scifi/error.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 518,
+          "sha256": "0df3a59f6d437762622060ee61cfa592191ebb8933de145e1ab0af3500df4c8f"
+        }
+      ]
+    },
+    "warning": {
+      "file": "catalog/sounds/scifi/warning.mp3",
+      "durationMs": 557,
+      "sha256": "f2963a05e2913a3f64d2ede545632ed3daa885ba4fa685a4e855a518134692d7",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/scifi/warning.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 557,
+          "sha256": "ca307acb85c3650da74c23ff8e5f705e637948d93ec99729c838d550eb3050ac"
+        }
+      ]
+    },
+    "notify": {
+      "file": "catalog/sounds/scifi/notification.mp3",
+      "durationMs": 481,
+      "sha256": "f287817ebb65310962ce8d05b161402f5832ed7ed212779323acccc2867333da",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/scifi/notification.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 481,
+          "sha256": "8567ebaaf759d06fed50df3fdbbe0c435c4a8121afef889c374b4526f30c3f30"
+        }
+      ]
+    },
+    "send": {
+      "file": "catalog/sounds/scifi/send.mp3",
+      "durationMs": 396,
+      "sha256": "c37cb860bc7c2d75571b58a888e12762be0bee04f16f09b747a0f7ab3dfbea8b",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/scifi/send.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 396,
+          "sha256": "42d5c83ab4296bd64564069e38be9a9cda173ac0bd0da1739b561e340ac0defd"
+        }
+      ]
+    },
+    "receive": {
+      "file": "catalog/sounds/scifi/receive.mp3",
+      "durationMs": 453,
+      "sha256": "604b4d28fe2d7c871a28f4c7ae69d7ea7c39287f64efd4e3b1a769037ba1c09c",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/scifi/receive.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 453,
+          "sha256": "f1d9dc574d2b43ce4d7ceed688eadf3af210783b68bfde9be9f20a4b224f17ed"
+        }
+      ]
+    },
+    "processing": {
+      "file": "catalog/sounds/scifi/processing.mp3",
+      "durationMs": 1600,
+      "sha256": "33b4ddbdff40dd6e3f6c4266b01a10fbcbc39f9df5b8206caca5b24fae87766f",
+      "gain": 0.08,
+      "sources": [
+        {
+          "file": "catalog/sounds/scifi/processing.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 1600,
+          "sha256": "4b06b86e8fef64689ee57784c696fc013861be1abe410464efda4c33acb7e3bb"
+        }
+      ]
+    },
+    "complete": {
+      "file": "catalog/sounds/scifi/complete.mp3",
+      "durationMs": 690,
+      "sha256": "9944c934e1e1319740cce895cc632058bacbfa9ec7c757df9125820a01993859",
+      "gain": 0.24,
+      "sources": [
+        {
+          "file": "catalog/sounds/scifi/complete.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 690,
+          "sha256": "f18c5c8e9d1db15dcc0d55da166a5f8387ad801e388afe682e4e990e523514bf"
+        }
+      ]
+    },
+    "deleteConfirm": {
+      "file": "catalog/sounds/scifi/delete.mp3",
+      "durationMs": 420,
+      "sha256": "da316280d467f7c1d28541e142421bb8abb1282a7324c2d697884709eae2c8c4",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/scifi/delete.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 420,
+          "sha256": "fe9bfee44f98192981f147661c2a0647e016e8800898ef2ab983af6857de900d"
+        }
+      ]
+    }
+  }
+}

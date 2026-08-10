@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "pack": {
+    "id": "wubble-community-arcade",
+    "revision": 1,
+    "budgetKb": 240
+  },
+  "defaults": {
+    "gain": 0.55,
+    "maxConcurrentSounds": 1
+  },
+  "provenance": {
+    "upstream": "UI SFX",
+    "sourceCommit": "2001f3dac2d1cf86ad99cbad5cef222c3a8b9082",
+    "audioLicense": "CC0-1.0"
+  },
+  "events": {
+    "tap": {
+      "file": "catalog/sounds/arcade/press.mp3",
+      "durationMs": 202,
+      "sha256": "9de1fd510e7adf6d14aea91e1f99b3d783968a2da9d35dc49b0544c4cd3a2f77",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/arcade/press.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 202,
+          "sha256": "7d9735c8b47c62c6167052edbfa18825dc94af97997e523b451c3ee23c6e8c3d"
+        }
+      ]
+    },
+    "toggleOn": {
+      "file": "catalog/sounds/arcade/toggle-on.mp3",
+      "durationMs": 322,
+      "sha256": "2e031832f422bcba32aec584a3af4ea288b43d30c166a9d26f5f634393c00db5",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/arcade/toggle-on.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 322,
+          "sha256": "45d1c7fff8828632eb99037fb16bef59a6ce70e32fa954cc9cde0f1930fea30e"
+        }
+      ]
+    },
+    "toggleOff": {
+      "file": "catalog/sounds/arcade/toggle-off.mp3",
+      "durationMs": 313,
+      "sha256": "c3b88a66e2c9a103e7f62100322a5d6d9ce0272c0120c08b8fd3ec35a8b1e358",
+      "gain": 0.18,
+      "sources": [
+        {
+          "file": "catalog/sounds/arcade/toggle-off.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 313,
+          "sha256": "6d52cc190c8b0b037d2b8db22bf87f99794b91f3a849aa8bb5a683b5b47804c3"
+        }
+      ]
+    },
+    "select": {
+      "file": "catalog/sounds/arcade/select.mp3",
+      "durationMs": 305,
+      "sha256": "ece3d996beab4b9de3cc75b4105c0b4d86920ed543b9696b340c1d236b9bdc1e",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/arcade/select.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 305,
+          "sha256": "5518c87c20530394167db164796187d96bee29fb63fb0db75a4366d6c04e4eec"
+        }
+      ]
+    },
+    "open": {
+      "file": "catalog/sounds/arcade/open.mp3",
+      "durationMs": 381,
+      "sha256": "73eef8772bde1307dd2f33494d36951de7852d750a622033360cd9dad8742cd1",
+      "gain": 0.18,
+      "sources": [
+        {
+          "file": "catalog/sounds/arcade/open.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 381,
+          "sha256": "b15eaedbd0d440380ecc81d496546836d85b350e5da37a330353c9cbd4253ed4"
+        }
+      ]
+    },
+    "close": {
+      "file": "catalog/sounds/arcade/close.mp3",
+      "durationMs": 328,
+      "sha256": "d09d238519775795095d51224d7e6d8c074c1407c34b3298bad96a31c42a77d0",
+      "gain": 0.17,
+      "sources": [
+        {
+          "file": "catalog/sounds/arcade/close.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 328,
+          "sha256": "2fe82bc8868e415b44d094cab3039d6fd04f49be58d6b899babf527315377d6e"
+        }
+      ]
+    },
+    "navigate": {
+      "file": "catalog/sounds/arcade/forward.mp3",
+      "durationMs": 306,
+      "sha256": "5279b69676167208da79c01dccc059a9544e34bdcea4908531beea3333b9f5f2",
+      "gain": 0.17,
+      "sources": [
+        {
+          "file": "catalog/sounds/arcade/forward.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 306,
+          "sha256": "65b972a40c2b1f4a62cf156deb412078fca15940ab9cd49d19470894e906672f"
+        }
+      ]
+    },
+    "success": {
+      "file": "catalog/sounds/arcade/success.mp3",
+      "durationMs": 625,
+      "sha256": "bcc9c993755d7361a142781828afe5f3a67947a132a2bc9d1bef8b2f6b9d43b3",
+      "gain": 0.23,
+      "sources": [
+        {
+          "file": "catalog/sounds/arcade/success.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 625,
+          "sha256": "f147b9b9b73086519554d865ce09a884a693afcf9d6a53342c21aabdbf61abdd"
+        }
+      ]
+    },
+    "error": {
+      "file": "catalog/sounds/arcade/error.mp3",
+      "durationMs": 556,
+      "sha256": "b8670ddbb1771c9044ae52f5f7c31cb715dfb064fa89756c45bdb9f5b4014ee6",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/arcade/error.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 556,
+          "sha256": "30b1e926226988e6b13bcb8bb78fffe9a36d3340be3f413d3c32ebe4406d3653"
+        }
+      ]
+    },
+    "warning": {
+      "file": "catalog/sounds/arcade/warning.mp3",
+      "durationMs": 590,
+      "sha256": "93a6ef3cef83a51f3f8449c9937665410d9efe0656c32c8f5f3423f6c465d80f",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/arcade/warning.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 590,
+          "sha256": "eeeec59431324169ebcec05307d5be816ae5a68467ba8eeaa1598245ae2e6750"
+        }
+      ]
+    },
+    "notify": {
+      "file": "catalog/sounds/arcade/notification.mp3",
+      "durationMs": 522,
+      "sha256": "62dcba4223acd4477ef21a4fcf045f4be8ed76e6b258244741c058be4dd5e8d7",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/arcade/notification.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 522,
+          "sha256": "b2529f345be538ec1fdcf97bcdf82483fd2e4dd657bed9de4b2d416529d6481e"
+        }
+      ]
+    },
+    "send": {
+      "file": "catalog/sounds/arcade/send.mp3",
+      "durationMs": 409,
+      "sha256": "bb457fd1c8cebe92e20dccaafbbcbdd5be53866f5be5eeffa5a3fc000a53c6cb",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/arcade/send.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 409,
+          "sha256": "f9a4f06907224fd36f2a3f8cd34b87b01a4dee00c54fa8633a3dc8db8bbde9e2"
+        }
+      ]
+    },
+    "receive": {
+      "file": "catalog/sounds/arcade/receive.mp3",
+      "durationMs": 443,
+      "sha256": "d2d8c1fb5c79a15e6a6b4ab7250be766b91e5e77a324460e4fbe9e07c3452ef7",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/arcade/receive.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 443,
+          "sha256": "46b84f7314a84b7471bf39146fd7157de2db3831e2b0f884b9e4c093cc2edafc"
+        }
+      ]
+    },
+    "processing": {
+      "file": "catalog/sounds/arcade/processing.mp3",
+      "durationMs": 1600,
+      "sha256": "a8a06fe076dadfae0c52f9eaf1b37eb748be0b6535f16825d057e798b3662072",
+      "gain": 0.08,
+      "sources": [
+        {
+          "file": "catalog/sounds/arcade/processing.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 1600,
+          "sha256": "67432dc625ad59c5d4f6a713229d0d61b45fbfa7d763f2b04ad55bfc2afc7085"
+        }
+      ]
+    },
+    "complete": {
+      "file": "catalog/sounds/arcade/complete.mp3",
+      "durationMs": 734,
+      "sha256": "97517d89b0b2f927c440d73d444e813a23d818f8f4fa66c501ebd9a89fbb636f",
+      "gain": 0.24,
+      "sources": [
+        {
+          "file": "catalog/sounds/arcade/complete.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 734,
+          "sha256": "4d23ce916d375df5ec5521059529915754256833cc841f5131bf20aedabde44c"
+        }
+      ]
+    },
+    "deleteConfirm": {
+      "file": "catalog/sounds/arcade/delete.mp3",
+      "durationMs": 431,
+      "sha256": "861a37f55bce93a19c129b43b3903636728eff94301ba7ee5d93759d77fc33f9",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/arcade/delete.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 431,
+          "sha256": "c63519fca9dd8fea599032040799ff8251d2c0f9468e8e735217c7f2daf79373"
+        }
+      ]
+    }
+  }
+}

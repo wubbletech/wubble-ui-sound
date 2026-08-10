@@ -1,0 +1,11 @@
+version: 1
+pack: signal
+events:
+  - tap
+  - success
+  - error
+budget:
+  maxCompressedKb: 120
+preferences:
+  defaultEnabled: false
+  maxConcurrentSounds: 1

@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a reproducible issue in a Wubble UI Sounds package or example.
+title: "bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not include credentials, customer data, or suspected security vulnerabilities."
+  - type: input
+    id: package
+    attributes:
+      label: Package and version
+      placeholder: "@wubble/sounds 0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Framework, browser, and operating system
+      placeholder: "Next.js 16, Safari 18, macOS"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include setup and exact steps.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true

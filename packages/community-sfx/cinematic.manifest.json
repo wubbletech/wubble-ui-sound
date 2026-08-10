@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "pack": {
+    "id": "wubble-community-cinematic",
+    "revision": 1,
+    "budgetKb": 240
+  },
+  "defaults": {
+    "gain": 0.55,
+    "maxConcurrentSounds": 1
+  },
+  "provenance": {
+    "upstream": "UI SFX",
+    "sourceCommit": "2001f3dac2d1cf86ad99cbad5cef222c3a8b9082",
+    "audioLicense": "CC0-1.0"
+  },
+  "events": {
+    "tap": {
+      "file": "catalog/sounds/cinematic/press.mp3",
+      "durationMs": 413,
+      "sha256": "ae3cfcf9f48a51b83b85af056e8e1a44ddcf23ce6d1b1ecc3ed7c52d4094540c",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/cinematic/press.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 413,
+          "sha256": "7cf9b71a2f2835923a67edd18f8e90b606f63478f0a89d7b97145b37b39f0ed7"
+        }
+      ]
+    },
+    "toggleOn": {
+      "file": "catalog/sounds/cinematic/toggle-on.mp3",
+      "durationMs": 600,
+      "sha256": "5f2afcc7d80563dde1b6040da09eaa4214a5ca7695eaf473a7d567a6c849f676",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/cinematic/toggle-on.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 600,
+          "sha256": "25ce415dd543e1bddafa6664a70fa9787939fb39bb63bf305b6cbb75a2519ae1"
+        }
+      ]
+    },
+    "toggleOff": {
+      "file": "catalog/sounds/cinematic/toggle-off.mp3",
+      "durationMs": 577,
+      "sha256": "982819e71125832bff67eec627a8147c4de0254e959deb1d7390cb164da5888c",
+      "gain": 0.18,
+      "sources": [
+        {
+          "file": "catalog/sounds/cinematic/toggle-off.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 577,
+          "sha256": "4ee84fc475f03093ca8904925c1ca7d65f3ab1e7ce27ed072906c51a89552d51"
+        }
+      ]
+    },
+    "select": {
+      "file": "catalog/sounds/cinematic/select.mp3",
+      "durationMs": 573,
+      "sha256": "f0ff1ac640c2e699658a3a52ea2c1dc5d40c18385f739caf5d963586e68e9727",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/cinematic/select.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 573,
+          "sha256": "3934e1ddcb55939fca16b7beaeea9bb27d3abe6b14553bf6a852408a6df7525b"
+        }
+      ]
+    },
+    "open": {
+      "file": "catalog/sounds/cinematic/open.mp3",
+      "durationMs": 674,
+      "sha256": "25d838e1702978c5e36ac6a5dfaddc54c679a59cb822f96f9577236e793266be",
+      "gain": 0.18,
+      "sources": [
+        {
+          "file": "catalog/sounds/cinematic/open.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 674,
+          "sha256": "21c28624a1fdd4654942a6eedb452ba5fe45505894f014cb7218dda8d8d57616"
+        }
+      ]
+    },
+    "close": {
+      "file": "catalog/sounds/cinematic/close.mp3",
+      "durationMs": 647,
+      "sha256": "0605ba72e3ea6e725fd697f49cc9f4a6a29649839e6ac4d32e819b964b649668",
+      "gain": 0.17,
+      "sources": [
+        {
+          "file": "catalog/sounds/cinematic/close.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 647,
+          "sha256": "e953ae401d7c27ef34a1db561c8bd6cbc33e081229612ce6de4e04ce9a31bbdf"
+        }
+      ]
+    },
+    "navigate": {
+      "file": "catalog/sounds/cinematic/forward.mp3",
+      "durationMs": 597,
+      "sha256": "dcc07d873d0d225ecfe921f7696ee6e440ad78722cae88e991d8b4298c6bed8b",
+      "gain": 0.17,
+      "sources": [
+        {
+          "file": "catalog/sounds/cinematic/forward.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 597,
+          "sha256": "03d3492309f01d6d303d17ca841a58e247bed2698e05dd87962ff951d954f244"
+        }
+      ]
+    },
+    "success": {
+      "file": "catalog/sounds/cinematic/success.mp3",
+      "durationMs": 1132,
+      "sha256": "8690f362ad1fe1d9dcce14b1678e0bcadd1d3ac3dee7390851f433cc8f48768b",
+      "gain": 0.23,
+      "sources": [
+        {
+          "file": "catalog/sounds/cinematic/success.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 1132,
+          "sha256": "8208bf81c9facc2f81990ae05e7865610829381facbe5496592955d7c52600da"
+        }
+      ]
+    },
+    "error": {
+      "file": "catalog/sounds/cinematic/error.mp3",
+      "durationMs": 994,
+      "sha256": "5c451b00bbfc2c4802900bb3fdd2e34b34e5251ed785aadd8184ae4ce03ab353",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/cinematic/error.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 994,
+          "sha256": "8fb023ff54134617d9a79b2fde4e3ed21e672ba33e39c29bfcc662b014b0be5b"
+        }
+      ]
+    },
+    "warning": {
+      "file": "catalog/sounds/cinematic/warning.mp3",
+      "durationMs": 1064,
+      "sha256": "a94898c42f3fe5505015165e1723d9dd8e295a9d74e0ca22a476182c4033d85e",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/cinematic/warning.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 1064,
+          "sha256": "b145147f906ef5c51e2fca1789166d036894183321d8a5009e823eb5dd3d3086"
+        }
+      ]
+    },
+    "notify": {
+      "file": "catalog/sounds/cinematic/notification.mp3",
+      "durationMs": 942,
+      "sha256": "f7e06987721f3150c64c599a1f56dbd9621eb979cf617ac26e52d64bbc2bd94e",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/cinematic/notification.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 942,
+          "sha256": "5fd9c50b11a806460ac118c6f545ff76f308eb9126e5229767702d51d85f9dd2"
+        }
+      ]
+    },
+    "send": {
+      "file": "catalog/sounds/cinematic/send.mp3",
+      "durationMs": 738,
+      "sha256": "ff2deb9cde45d409de486f8e5a8cf4fe5daa27845b0407e9471979510b06f306",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/cinematic/send.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 738,
+          "sha256": "6dc3f4566a0fb7e1960bd27ad3182b2617ce62040558707edac6e0714308fa76"
+        }
+      ]
+    },
+    "receive": {
+      "file": "catalog/sounds/cinematic/receive.mp3",
+      "durationMs": 802,
+      "sha256": "8b6e1a7d1d47c9c85546ddcc079414a0a12ef7c794b4975cd33d078ee7e4ec37",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/cinematic/receive.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 802,
+          "sha256": "168be84e230cce0865c899c69852e5dfe854c2859300212a4d8b9f768bc04424"
+        }
+      ]
+    },
+    "processing": {
+      "file": "catalog/sounds/cinematic/processing.mp3",
+      "durationMs": 1600,
+      "sha256": "6b622ff4919a3ac8f535f87689574f19947a9f4349c2ac9aad7a3e8add877397",
+      "gain": 0.08,
+      "sources": [
+        {
+          "file": "catalog/sounds/cinematic/processing.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 1600,
+          "sha256": "9ea08b09c6dd14732319f58c175360166ab12576339cbc42c6c3ed28251b5c43"
+        }
+      ]
+    },
+    "complete": {
+      "file": "catalog/sounds/cinematic/complete.mp3",
+      "durationMs": 1224,
+      "sha256": "40ac0201678739b09da507d7f516e1bd46fca86a48de0bbc0c4bd8e287547ce6",
+      "gain": 0.24,
+      "sources": [
+        {
+          "file": "catalog/sounds/cinematic/complete.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 1224,
+          "sha256": "ccedfaf12b9ff077b246f85eb962f3804c467fedb2508721c59eb1508b56f636"
+        }
+      ]
+    },
+    "deleteConfirm": {
+      "file": "catalog/sounds/cinematic/delete.mp3",
+      "durationMs": 814,
+      "sha256": "be4d3caba5324c8f7658018e75021d11c28d7f9a3b18ebcece66c7df54f0386d",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/cinematic/delete.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 814,
+          "sha256": "1be9e95781bf90c1026d72767ca9c2339b5af273ef6c5afe462409aef4144c4b"
+        }
+      ]
+    }
+  }
+}

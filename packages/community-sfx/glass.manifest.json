@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "pack": {
+    "id": "wubble-community-glass",
+    "revision": 1,
+    "budgetKb": 240
+  },
+  "defaults": {
+    "gain": 0.55,
+    "maxConcurrentSounds": 1
+  },
+  "provenance": {
+    "upstream": "UI SFX",
+    "sourceCommit": "2001f3dac2d1cf86ad99cbad5cef222c3a8b9082",
+    "audioLicense": "CC0-1.0"
+  },
+  "events": {
+    "tap": {
+      "file": "catalog/sounds/glass/press.mp3",
+      "durationMs": 363,
+      "sha256": "cdd8612149a27209b98e2784d63b56cebdf08c85be43471ba0e6ed3bf6e087ed",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/glass/press.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 363,
+          "sha256": "a7ef832f48d39d48bcd8038f478920c8f5c529813b26bac5ab32cb7cddda064e"
+        }
+      ]
+    },
+    "toggleOn": {
+      "file": "catalog/sounds/glass/toggle-on.mp3",
+      "durationMs": 534,
+      "sha256": "db49d79bb3c770c3c9a8620561565c5aff0f53128305e4d821848a8c0f800f8f",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/glass/toggle-on.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 534,
+          "sha256": "f17181ac7900990d952deb209bca52e95d00ac4d29508e07593224fcfa81ff85"
+        }
+      ]
+    },
+    "toggleOff": {
+      "file": "catalog/sounds/glass/toggle-off.mp3",
+      "durationMs": 522,
+      "sha256": "ac4b56ff438c83722ef8199d3a21ff15b1ab0964c5f56f9b576e0da1112c6936",
+      "gain": 0.18,
+      "sources": [
+        {
+          "file": "catalog/sounds/glass/toggle-off.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 522,
+          "sha256": "d9e3628866554734fac5f2f10d86475230e4bd209f663586a873649ab3b5fda3"
+        }
+      ]
+    },
+    "select": {
+      "file": "catalog/sounds/glass/select.mp3",
+      "durationMs": 510,
+      "sha256": "65c88e117a6d6fa8af991282ca8cc49e7cb4704094f74e907069b4634700f590",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/glass/select.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 510,
+          "sha256": "9df9387005b6de5ad9bf4799f7d41a44bc0049f5e8597f17018de958baea5f5a"
+        }
+      ]
+    },
+    "open": {
+      "file": "catalog/sounds/glass/open.mp3",
+      "durationMs": 582,
+      "sha256": "3653e6e2a718637a8d79a1b80e2c860c91a9724def1fbe1ddb5c141efb737f92",
+      "gain": 0.18,
+      "sources": [
+        {
+          "file": "catalog/sounds/glass/open.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 582,
+          "sha256": "a8aeeac5ddc1b181ebfe109c7f56f019c4ffda7be284348dc7cda76591e510ce"
+        }
+      ]
+    },
+    "close": {
+      "file": "catalog/sounds/glass/close.mp3",
+      "durationMs": 583,
+      "sha256": "4ca541cb77cf9af7473912e82f9c5002865ca1b8dc2b4e59ece03175e6c0e5f2",
+      "gain": 0.17,
+      "sources": [
+        {
+          "file": "catalog/sounds/glass/close.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 583,
+          "sha256": "f27597be05ff9e55453236ef816d392b8acfca1243831e440bb4a7de0da467f4"
+        }
+      ]
+    },
+    "navigate": {
+      "file": "catalog/sounds/glass/forward.mp3",
+      "durationMs": 545,
+      "sha256": "137321394db6b61ca9faf63ac6f4bcbb6ed379c9489ea2cfc5c15d87b49ee7f6",
+      "gain": 0.17,
+      "sources": [
+        {
+          "file": "catalog/sounds/glass/forward.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 545,
+          "sha256": "a709c5eae735cacad2a0f97d64a95f53b52c81ca5ef724dce4a932df4f00d18b"
+        }
+      ]
+    },
+    "success": {
+      "file": "catalog/sounds/glass/success.mp3",
+      "durationMs": 1033,
+      "sha256": "c3a9ace5be630327355f43d069c1208933304583e636dc6bd595a6f547c91cdb",
+      "gain": 0.23,
+      "sources": [
+        {
+          "file": "catalog/sounds/glass/success.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 1033,
+          "sha256": "0215a2a1afc6a1bf59e17cc37c11dc9fe2f76f52eb35c090c187799a7f5f4e09"
+        }
+      ]
+    },
+    "error": {
+      "file": "catalog/sounds/glass/error.mp3",
+      "durationMs": 887,
+      "sha256": "380c731be98f48cb9d3c0c76373a31ff57d90cb7b04ad76e5e0b16e73877e9c0",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/glass/error.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 887,
+          "sha256": "24f034c9e4c2bac896eb9b8430280897aa98bce044e2241c52c19e02d605b476"
+        }
+      ]
+    },
+    "warning": {
+      "file": "catalog/sounds/glass/warning.mp3",
+      "durationMs": 936,
+      "sha256": "b8299bdb818003caf9764645208cf55a7b2aace206adbbc0a343e9f542af8f29",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/glass/warning.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 936,
+          "sha256": "907111b997dc057cd8faeeb277ac5a83f4dafc90018331ae8e3989e69b1321db"
+        }
+      ]
+    },
+    "notify": {
+      "file": "catalog/sounds/glass/notification.mp3",
+      "durationMs": 826,
+      "sha256": "c08113be4642a20c2e917dec6a3b490ba93424a8063326e77393f54f5c6b1cdd",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/glass/notification.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 826,
+          "sha256": "398a3468bc2bece645a97a1b0d08e188b3771f25187ad4a9ec0f74be922e6ba9"
+        }
+      ]
+    },
+    "send": {
+      "file": "catalog/sounds/glass/send.mp3",
+      "durationMs": 655,
+      "sha256": "6887407c109d33ac4f7a4590920c8200f003e5d4a2587c545c6955f67ea3e35d",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/glass/send.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 655,
+          "sha256": "9cb58495b712be2a6771273284116034b01ce4bbc29815658eb22047881fb6f3"
+        }
+      ]
+    },
+    "receive": {
+      "file": "catalog/sounds/glass/receive.mp3",
+      "durationMs": 740,
+      "sha256": "2cd23f7fd78349d90e75376b893c7dfb36b005bba0ddfcf95e826a0d2d300170",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/glass/receive.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 740,
+          "sha256": "7cab5336eccd4aa89221edc3dd36f47f9c6544f43fad887cff1899bdb9c2be33"
+        }
+      ]
+    },
+    "processing": {
+      "file": "catalog/sounds/glass/processing.mp3",
+      "durationMs": 1600,
+      "sha256": "10d7386aba4723d05c518f48c049f2e187c9b8c2de33442b242eaf053341617c",
+      "gain": 0.08,
+      "sources": [
+        {
+          "file": "catalog/sounds/glass/processing.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 1600,
+          "sha256": "22e9edff9574e3bb156f1d140f47ade964d22889ca9db763910d0ea1979c4fa1"
+        }
+      ]
+    },
+    "complete": {
+      "file": "catalog/sounds/glass/complete.mp3",
+      "durationMs": 1119,
+      "sha256": "bd26df36642386de670b4bd291a0bc072d32b95ba6e0a701e0eca690946aea56",
+      "gain": 0.24,
+      "sources": [
+        {
+          "file": "catalog/sounds/glass/complete.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 1119,
+          "sha256": "188936fccef1469257d1286638b60d687c61f1914f8be7eadb05d6a4d504c03d"
+        }
+      ]
+    },
+    "deleteConfirm": {
+      "file": "catalog/sounds/glass/delete.mp3",
+      "durationMs": 716,
+      "sha256": "72de0657e124653f80328df59a8814eb29b08ee1cccfb1c402ce8b567c593853",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/glass/delete.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 716,
+          "sha256": "4ee1baca82c756843c28002b0f34cb18d6ca42bc87dc960b3bad25deee11e685"
+        }
+      ]
+    }
+  }
+}

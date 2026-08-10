@@ -1,0 +1,28 @@
+{
+  "name": "@wubble/react",
+  "version": "0.0.0-development",
+  "description": "React bindings for Wubble UI Sounds.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/wubbletech/wubble-ui-sound.git",
+  "homepage": "https://github.com/wubbletech/wubble-ui-sound#readme",
+  "bugs": "https://github.com/wubbletech/wubble-ui-sound/issues",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "@wubble/sounds": "0.0.0-development"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0 <20.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

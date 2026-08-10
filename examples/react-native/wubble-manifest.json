@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "pack": {
+    "id": "signal-mobile",
+    "revision": 1
+  },
+  "events": {
+    "tap": {
+      "file": "tap.mp3",
+      "durationMs": 120,
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "policy": {
+        "hapticIntent": "selection"
+      }
+    },
+    "success": {
+      "file": "success.mp3",
+      "durationMs": 260,
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "policy": {
+        "priority": "high",
+        "hapticIntent": "success"
+      }
+    }
+  }
+}

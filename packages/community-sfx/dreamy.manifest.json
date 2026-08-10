@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "pack": {
+    "id": "wubble-community-dreamy",
+    "revision": 1,
+    "budgetKb": 240
+  },
+  "defaults": {
+    "gain": 0.55,
+    "maxConcurrentSounds": 1
+  },
+  "provenance": {
+    "upstream": "UI SFX",
+    "sourceCommit": "2001f3dac2d1cf86ad99cbad5cef222c3a8b9082",
+    "audioLicense": "CC0-1.0"
+  },
+  "events": {
+    "tap": {
+      "file": "catalog/sounds/dreamy/press.mp3",
+      "durationMs": 433,
+      "sha256": "066a4676a53ce5fa8d544dd9b1fe0975ef259a33702ccdab27727e5b7af77ae4",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/dreamy/press.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 433,
+          "sha256": "78fb42aadf357a124ef9977a63b45d88ae0048987e0302c98ba0063b325591ec"
+        }
+      ]
+    },
+    "toggleOn": {
+      "file": "catalog/sounds/dreamy/toggle-on.mp3",
+      "durationMs": 613,
+      "sha256": "9bef8711635acd398e7e7f846eb040676e07acd9d815fbe865153a5c0547c2ea",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/dreamy/toggle-on.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 613,
+          "sha256": "fe5c75edb477910f17ec52362d0d92e190c22eea1ca6ca8da2741c46c88008fc"
+        }
+      ]
+    },
+    "toggleOff": {
+      "file": "catalog/sounds/dreamy/toggle-off.mp3",
+      "durationMs": 592,
+      "sha256": "d3af6f38712018e574c4a0108e3cc16420246b03bffcb9fc0b6f985b5907fecd",
+      "gain": 0.18,
+      "sources": [
+        {
+          "file": "catalog/sounds/dreamy/toggle-off.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 592,
+          "sha256": "dc2f03db281dfc2acd9e7de64312eb7779dc736ad60e1b871e07cbea52d48b83"
+        }
+      ]
+    },
+    "select": {
+      "file": "catalog/sounds/dreamy/select.mp3",
+      "durationMs": 589,
+      "sha256": "7568d009ffab2df723af5da570ef52f80581c2b307e6d8277e2fd34e0a8d760f",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/dreamy/select.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 589,
+          "sha256": "06808770f1849d65d6895ca9c4fb59128356a4fb5a684b8131739b196f8d374a"
+        }
+      ]
+    },
+    "open": {
+      "file": "catalog/sounds/dreamy/open.mp3",
+      "durationMs": 685,
+      "sha256": "c06fed89cb4104b08e773a34d99a59d76b5c0bacd9b420e9affff08b3d4955d3",
+      "gain": 0.18,
+      "sources": [
+        {
+          "file": "catalog/sounds/dreamy/open.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 685,
+          "sha256": "826ee0681b3859f115cfb07aa09bf166e8086491ba2722708d67aec28a26cefb"
+        }
+      ]
+    },
+    "close": {
+      "file": "catalog/sounds/dreamy/close.mp3",
+      "durationMs": 656,
+      "sha256": "550d4ca49c5408b818b2530a5eda2742d4fd41000015dcaae9a7abdbcb4fba47",
+      "gain": 0.17,
+      "sources": [
+        {
+          "file": "catalog/sounds/dreamy/close.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 656,
+          "sha256": "8e42c7e403f39b4edbd9a5d7f78a652ca4f3812ad0988be6d4c58ca2b4c2acee"
+        }
+      ]
+    },
+    "navigate": {
+      "file": "catalog/sounds/dreamy/forward.mp3",
+      "durationMs": 603,
+      "sha256": "91fe9620858d1a651d8e8b6c8a134ef5fc2ed383d526ee3cef798aa1efd65ed7",
+      "gain": 0.17,
+      "sources": [
+        {
+          "file": "catalog/sounds/dreamy/forward.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 603,
+          "sha256": "1c4afcd13dbbf8f988637efed80734ca7b34dd06b16880cb302701bad1655b25"
+        }
+      ]
+    },
+    "success": {
+      "file": "catalog/sounds/dreamy/success.mp3",
+      "durationMs": 1132,
+      "sha256": "3004d9240c2d2a534b23b633d8eec9b6e1ac66b5c8bbcd2ec5e0c40eaaff0f4e",
+      "gain": 0.23,
+      "sources": [
+        {
+          "file": "catalog/sounds/dreamy/success.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 1132,
+          "sha256": "cd39bbcb35f7c1a2c63a4328f2ef83a1571f50c09c1a4c06408778d07bef7e82"
+        }
+      ]
+    },
+    "error": {
+      "file": "catalog/sounds/dreamy/error.mp3",
+      "durationMs": 978,
+      "sha256": "60f7fdfa999d9b300bcc5d1b3e18628cad21fffebc9dc90b420851eb505f468a",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/dreamy/error.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 978,
+          "sha256": "faffc88e0a0a3df47a11a5c19bdc6346ffbcd51aa5dad84dbaaf9cfc42102784"
+        }
+      ]
+    },
+    "warning": {
+      "file": "catalog/sounds/dreamy/warning.mp3",
+      "durationMs": 1034,
+      "sha256": "b79a65a6931de175e272dff6cc3f033e06243bc13dcce755a79451d96d066b28",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/dreamy/warning.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 1034,
+          "sha256": "f5018fa45c7b71c129b2492a35752ef3625860eeb4c300d854dbd935db3e22a0"
+        }
+      ]
+    },
+    "notify": {
+      "file": "catalog/sounds/dreamy/notification.mp3",
+      "durationMs": 916,
+      "sha256": "bc0b196d56c567c3c7623518b27aab72ca63d92e549b592d36d571b039477184",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/dreamy/notification.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 916,
+          "sha256": "d5256315ab6f10eecc82468551844a5c28204e66d2b5d8f6354e43c619236971"
+        }
+      ]
+    },
+    "send": {
+      "file": "catalog/sounds/dreamy/send.mp3",
+      "durationMs": 746,
+      "sha256": "18425df0c6d8f0a60d421e4e29b6d872862be8d290a7559fa37e8ead2e9f0e3b",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/dreamy/send.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 746,
+          "sha256": "b8f79eef19d4e147d7b995da1c83bd7f297285814ada609425d48368555729eb"
+        }
+      ]
+    },
+    "receive": {
+      "file": "catalog/sounds/dreamy/receive.mp3",
+      "durationMs": 846,
+      "sha256": "a5e3c2428d757540c8234135a974f5fa54ab443f5cc5538cab7f8b5c43185aac",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/dreamy/receive.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 846,
+          "sha256": "9f763c96c7e2a40b87388d718c50a2733efc2c8a2c425d0eddb208caae0a54e6"
+        }
+      ]
+    },
+    "processing": {
+      "file": "catalog/sounds/dreamy/processing.mp3",
+      "durationMs": 1600,
+      "sha256": "82ac6ac46088bd90efccf74f9153dc1e91ac12ec6a40a73a357e1460d2c88452",
+      "gain": 0.08,
+      "sources": [
+        {
+          "file": "catalog/sounds/dreamy/processing.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 1600,
+          "sha256": "79e17f27fdee3ef2f881d3cc97d402a93b3900678d75ada76b3bff0eec3bdcfd"
+        }
+      ]
+    },
+    "complete": {
+      "file": "catalog/sounds/dreamy/complete.mp3",
+      "durationMs": 1214,
+      "sha256": "636527ae3e295d0b70b6f136d87e9c8d663da0a751dbce1296eca5aca1ecd5e4",
+      "gain": 0.24,
+      "sources": [
+        {
+          "file": "catalog/sounds/dreamy/complete.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 1214,
+          "sha256": "c0294a13ef0bc5ae74fa8f0cb4c8b9b29926b2a4c6d4072555fa4a0061bddb8a"
+        }
+      ]
+    },
+    "deleteConfirm": {
+      "file": "catalog/sounds/dreamy/delete.mp3",
+      "durationMs": 798,
+      "sha256": "97760687c2bcde12552629b36a503ab8e4d289e2197dec93908dabed481c3a5a",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/dreamy/delete.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 798,
+          "sha256": "65ae5736f3c7f361cffc7ba7a890fd886f0ea948b15c54ee478f8a550be1a395"
+        }
+      ]
+    }
+  }
+}

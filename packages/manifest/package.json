@@ -1,0 +1,22 @@
+{
+  "name": "@wubble/manifest",
+  "version": "0.0.0-development",
+  "description": "Manifest schema and validation for Wubble UI Sounds.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/wubbletech/wubble-ui-sound.git",
+  "homepage": "https://github.com/wubbletech/wubble-ui-sound#readme",
+  "bugs": "https://github.com/wubbletech/wubble-ui-sound/issues",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "files": [
+    "src"
+  ],
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "pack": {
+    "id": "wubble-community-rubber",
+    "revision": 1,
+    "budgetKb": 240
+  },
+  "defaults": {
+    "gain": 0.55,
+    "maxConcurrentSounds": 1
+  },
+  "provenance": {
+    "upstream": "UI SFX",
+    "sourceCommit": "2001f3dac2d1cf86ad99cbad5cef222c3a8b9082",
+    "audioLicense": "CC0-1.0"
+  },
+  "events": {
+    "tap": {
+      "file": "catalog/sounds/rubber/press.mp3",
+      "durationMs": 184,
+      "sha256": "a2e6a3e62f82e2789c11c6413a4712ff109b5c78390edf37c81ba878eb2fb023",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/rubber/press.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 184,
+          "sha256": "b34af2badd881d36ddbbe91885139f5f7e0382a7ef5404771f74b916d07d82d6"
+        }
+      ]
+    },
+    "toggleOn": {
+      "file": "catalog/sounds/rubber/toggle-on.mp3",
+      "durationMs": 307,
+      "sha256": "e8b733c75dc27cd6560364226763caea56de627508fd97d4117f8fb676187013",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/rubber/toggle-on.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 307,
+          "sha256": "037bf5f1db32873d2b7db01555ef6bd7fc83ba9944423cab9f591fcaf938a135"
+        }
+      ]
+    },
+    "toggleOff": {
+      "file": "catalog/sounds/rubber/toggle-off.mp3",
+      "durationMs": 298,
+      "sha256": "af49f0d7ac78abfe776dc78231b600facf5628dc17e60d46a079f7f923c83913",
+      "gain": 0.18,
+      "sources": [
+        {
+          "file": "catalog/sounds/rubber/toggle-off.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 298,
+          "sha256": "a728e20a26b3c17b44f25f0e5f1580d178224901edf833ae8cfbac2a6f96f29a"
+        }
+      ]
+    },
+    "select": {
+      "file": "catalog/sounds/rubber/select.mp3",
+      "durationMs": 290,
+      "sha256": "95a8beff8549263fe0e7e8b9b8cc1913f6fefd8b6edc0628b6010685c6b9c9d8",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/rubber/select.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 290,
+          "sha256": "c79dcda77d149ecc794d01cff0b88d7fcb8158cc1d5305b85c1408dbaf9b67b3"
+        }
+      ]
+    },
+    "open": {
+      "file": "catalog/sounds/rubber/open.mp3",
+      "durationMs": 343,
+      "sha256": "db4a920398c173894646a05d33f8ddcbd7c4799e6c8631ce9c81c0b31652b876",
+      "gain": 0.18,
+      "sources": [
+        {
+          "file": "catalog/sounds/rubber/open.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 343,
+          "sha256": "a178955b1cba37da9893e66bd044eb5db9c7b13a6b9f401ed65328f4dea3893f"
+        }
+      ]
+    },
+    "close": {
+      "file": "catalog/sounds/rubber/close.mp3",
+      "durationMs": 332,
+      "sha256": "737b196cefe2846f57e7585c7748eb9a441bfa2309fd84fbddfa4283bcd6ce23",
+      "gain": 0.17,
+      "sources": [
+        {
+          "file": "catalog/sounds/rubber/close.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 332,
+          "sha256": "d4f1c108a8cfbc5d6a141f903ec2243bff8e9b281b985be47048411d5debd18d"
+        }
+      ]
+    },
+    "navigate": {
+      "file": "catalog/sounds/rubber/forward.mp3",
+      "durationMs": 310,
+      "sha256": "00ece8d51cfab6f50f163946cb56865f603c2701a61dad9d6329767228de22ec",
+      "gain": 0.17,
+      "sources": [
+        {
+          "file": "catalog/sounds/rubber/forward.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 310,
+          "sha256": "3451a26b9afc0c532d07251ebb42c6fea378cf383141702416c070d02946dd54"
+        }
+      ]
+    },
+    "success": {
+      "file": "catalog/sounds/rubber/success.mp3",
+      "durationMs": 639,
+      "sha256": "89c9d39ba7c923129fa8c0549388e911a7ae924bdf63096bf6879e2846d6b21f",
+      "gain": 0.23,
+      "sources": [
+        {
+          "file": "catalog/sounds/rubber/success.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 639,
+          "sha256": "50eaed94438dedb106990c36dfd2fb3e49fd26bcfdf12fbdabf47f0172b0b8c3"
+        }
+      ]
+    },
+    "error": {
+      "file": "catalog/sounds/rubber/error.mp3",
+      "durationMs": 533,
+      "sha256": "a0ff58a1b30b4eca98c8543654afb79eb81b179d78805c91cb4a256efe210c61",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/rubber/error.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 533,
+          "sha256": "04b2b5967ff315d6d2ffe713bcc74b124fabdd9970711467cd8ecc4af03aa022"
+        }
+      ]
+    },
+    "warning": {
+      "file": "catalog/sounds/rubber/warning.mp3",
+      "durationMs": 570,
+      "sha256": "92d2b83d64e957fc5fc149850f44da84fb2cd1094bc9d1ac516c7ee434b8b1eb",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/rubber/warning.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 570,
+          "sha256": "fc8b7e49a9abfa19ff3c173c7ffe472868dcf6a579335a62ff6c35b82560a2a2"
+        }
+      ]
+    },
+    "notify": {
+      "file": "catalog/sounds/rubber/notification.mp3",
+      "durationMs": 492,
+      "sha256": "7c3f5f75c7b005a4fecf5aa96b2b612f2c105f86661cc95392582478400fd446",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/rubber/notification.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 492,
+          "sha256": "86f935556821bec80c299471d78670e77e4f2b14e93e5ade7ac602c2dbc32d30"
+        }
+      ]
+    },
+    "send": {
+      "file": "catalog/sounds/rubber/send.mp3",
+      "durationMs": 389,
+      "sha256": "960501153e4b76e84d50f4d4514f180067bf722fee6dfbb9a9136405b21761f2",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/rubber/send.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 389,
+          "sha256": "2986cac0d45fce3dd1cc6444e3d1ae53b8a0981b4b019d64b1f9cb55a4f3a3e2"
+        }
+      ]
+    },
+    "receive": {
+      "file": "catalog/sounds/rubber/receive.mp3",
+      "durationMs": 451,
+      "sha256": "77b054890ae6967eb40c86af84a541c56ce5fdff0a685dbd2f7c65cd015ba8cc",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/rubber/receive.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 451,
+          "sha256": "e466eed80c41b470fd947e162316817311f537e1a735e194363f6360e035d5b9"
+        }
+      ]
+    },
+    "processing": {
+      "file": "catalog/sounds/rubber/processing.mp3",
+      "durationMs": 1600,
+      "sha256": "b08144dbb7da4fd35bf412b25e8825e7fdb7ec1667011d176b2cb84048f0b99b",
+      "gain": 0.08,
+      "sources": [
+        {
+          "file": "catalog/sounds/rubber/processing.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 1600,
+          "sha256": "2b357867cb5a20dad4b39580ddac7c7426b4ad0dc64e170c4d86e950675be3ed"
+        }
+      ]
+    },
+    "complete": {
+      "file": "catalog/sounds/rubber/complete.mp3",
+      "durationMs": 707,
+      "sha256": "f75ea95cbe831750a56677bf32a5896fe1ad7cc9359684517849f27e72a6492d",
+      "gain": 0.24,
+      "sources": [
+        {
+          "file": "catalog/sounds/rubber/complete.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 707,
+          "sha256": "fa02a202519772aa972d9077ed030b14baf610568ea37733d604deaed11f7138"
+        }
+      ]
+    },
+    "deleteConfirm": {
+      "file": "catalog/sounds/rubber/delete.mp3",
+      "durationMs": 422,
+      "sha256": "ff73826bbeb88f4bd448e6b5e1a3a54acbddd46ff714c9ab83f3cc138dd0441b",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/rubber/delete.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 422,
+          "sha256": "7880e5dbddd02c91b8dcd0cd9ea72b61f8e00d8d1237a86757d48045f7a1f924"
+        }
+      ]
+    }
+  }
+}

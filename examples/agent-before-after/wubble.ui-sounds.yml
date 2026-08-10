@@ -1,0 +1,26 @@
+version: 1
+pack: wubble-core
+revision: 1
+platform: web
+events:
+  - tap
+  - toggleOn
+  - toggleOff
+  - select
+  - open
+  - close
+  - navigate
+  - success
+  - error
+  - warning
+  - notify
+  - send
+  - receive
+  - processing
+  - complete
+  - deleteConfirm
+budget:
+  maxCompressedKb: 120
+preferences:
+  defaultEnabled: false
+  maxConcurrentSounds: 1

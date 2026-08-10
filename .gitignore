@@ -1,0 +1,11 @@
+node_modules/
+.codex/
+.DS_Store
+coverage/
+*.log
+.next/
+.turbo/
+*.tgz
+.wubble-ui-sounds/
+examples/nextjs/AGENTS.md
+examples/nextjs/CLAUDE.md

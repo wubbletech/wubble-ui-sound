@@ -1,0 +1,41 @@
+{
+  "name": "@wubble/react-native",
+  "version": "0.0.0-development",
+  "description": "Local-first semantic UI feedback for React Native applications.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/wubbletech/wubble-ui-sound.git",
+  "homepage": "https://github.com/wubbletech/wubble-ui-sound#readme",
+  "bugs": "https://github.com/wubbletech/wubble-ui-sound/issues",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./expo": {
+      "types": "./src/expo.d.ts",
+      "default": "./src/expo.js"
+    }
+  },
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "@wubble/manifest": "0.0.0-development"
+  },
+  "peerDependencies": {
+    "expo-audio": ">=1.0.0",
+    "expo-haptics": ">=1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "expo-audio": {
+      "optional": true
+    },
+    "expo-haptics": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "pack": {
+    "id": "wubble-community-zen",
+    "revision": 1,
+    "budgetKb": 240
+  },
+  "defaults": {
+    "gain": 0.55,
+    "maxConcurrentSounds": 1
+  },
+  "provenance": {
+    "upstream": "UI SFX",
+    "sourceCommit": "2001f3dac2d1cf86ad99cbad5cef222c3a8b9082",
+    "audioLicense": "CC0-1.0"
+  },
+  "events": {
+    "tap": {
+      "file": "catalog/sounds/zen/press.mp3",
+      "durationMs": 155,
+      "sha256": "e323f95066734d3fccbb369d18699aba97ac4cea62f09a3fcfa5b27e7c9843a2",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/zen/press.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 155,
+          "sha256": "207fd9fd465261a9be86a0466b6069bcf0873b29fafbaeb0bb09fa13e2938a91"
+        }
+      ]
+    },
+    "toggleOn": {
+      "file": "catalog/sounds/zen/toggle-on.mp3",
+      "durationMs": 268,
+      "sha256": "dbd8f835f675d2edb9db347470edc483062e83ba7501bb753536f680c1f6123a",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/zen/toggle-on.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 268,
+          "sha256": "f17f8e55bef09cdbd4034eb032bfc5dad60a4ba52bd6ff2e2e671b7360569565"
+        }
+      ]
+    },
+    "toggleOff": {
+      "file": "catalog/sounds/zen/toggle-off.mp3",
+      "durationMs": 262,
+      "sha256": "607d75235809637f636b1b7d617f6a255bbd979342c379081ec880db763aca08",
+      "gain": 0.18,
+      "sources": [
+        {
+          "file": "catalog/sounds/zen/toggle-off.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 262,
+          "sha256": "02a63c2df790c6b42b3225c5f88ccccca8b0c0b68c00af2d0de3921e910a7427"
+        }
+      ]
+    },
+    "select": {
+      "file": "catalog/sounds/zen/select.mp3",
+      "durationMs": 254,
+      "sha256": "7fc8a7319161e3cf1ffbe84d38c0200d710f07dc6860b1001de4a15822acbac1",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/zen/select.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 254,
+          "sha256": "6fc6623b108af37767fc2c08cafc99b6281e7c9b65fb21a0979254102ef77dd0"
+        }
+      ]
+    },
+    "open": {
+      "file": "catalog/sounds/zen/open.mp3",
+      "durationMs": 327,
+      "sha256": "f6d4e8510fc6e056524614db6ca50418f5bc22a0a50165054f380771831d9cc3",
+      "gain": 0.18,
+      "sources": [
+        {
+          "file": "catalog/sounds/zen/open.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 327,
+          "sha256": "7e537539c3697be7fe7a19be3e0cdaa9f84dfe43944556af4744ada3bb0320a8"
+        }
+      ]
+    },
+    "close": {
+      "file": "catalog/sounds/zen/close.mp3",
+      "durationMs": 303,
+      "sha256": "db2e532e969cde14c5a15182a8213a9ff389325003731e791ba760a0bdc5c729",
+      "gain": 0.17,
+      "sources": [
+        {
+          "file": "catalog/sounds/zen/close.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 303,
+          "sha256": "b1dcd4bba74ee8cbd4c4216c7096ad5bbc42a27090e3925e9e4942f0be91248f"
+        }
+      ]
+    },
+    "navigate": {
+      "file": "catalog/sounds/zen/forward.mp3",
+      "durationMs": 278,
+      "sha256": "202c321856b022ce1df58a959d6664fc2bedb5a7462c8199380d87042c2977e0",
+      "gain": 0.17,
+      "sources": [
+        {
+          "file": "catalog/sounds/zen/forward.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 278,
+          "sha256": "1ad5233616aab65592cbf0f10c9aca5375b4ef7082a3a4cfdcbddab9dd884b09"
+        }
+      ]
+    },
+    "success": {
+      "file": "catalog/sounds/zen/success.mp3",
+      "durationMs": 571,
+      "sha256": "b2e8426126af308d7abf99e4087549c5289df3d20774f30075ace1a3fea42292",
+      "gain": 0.23,
+      "sources": [
+        {
+          "file": "catalog/sounds/zen/success.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 571,
+          "sha256": "dfc0425b035439dac40c64f9918a74a986852c9fac35ca11e57788d7894cfc44"
+        }
+      ]
+    },
+    "error": {
+      "file": "catalog/sounds/zen/error.mp3",
+      "durationMs": 481,
+      "sha256": "3c092f6645dd823708f1fae3f9f6b6a07c5e805b106d48cc10654cc69803b543",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/zen/error.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 481,
+          "sha256": "6a40d86bfaaa6189bf0467fe11fc53896229dd03247dffe72791e1f8cf4f9bd1"
+        }
+      ]
+    },
+    "warning": {
+      "file": "catalog/sounds/zen/warning.mp3",
+      "durationMs": 520,
+      "sha256": "5ec4d697c5ff0873182471d80f446bf57bfd2ad0872eb0a4e3bf5009c85b7b6a",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/zen/warning.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 520,
+          "sha256": "3e378e9ebbf171dc896f00280ac4daff2d867e4fb8f70a7f1626e9bf6839a436"
+        }
+      ]
+    },
+    "notify": {
+      "file": "catalog/sounds/zen/notification.mp3",
+      "durationMs": 458,
+      "sha256": "0bc938dd36351fe3f1022674701ae0bd1cd5116312e80a42b6817c431e09726d",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/zen/notification.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 458,
+          "sha256": "9bbe29b4da06ef6bd0bd64760c5e1698d9df869b061ca54d568ecf8ff07c4843"
+        }
+      ]
+    },
+    "send": {
+      "file": "catalog/sounds/zen/send.mp3",
+      "durationMs": 368,
+      "sha256": "9fc2d8abda5aacea30904a4e0d3592ea201a9265252672cd9af99f09e2fe17aa",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/zen/send.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 368,
+          "sha256": "cf7b3903a495892a0c774cefc8e1f90308c9a5954cf8cc3678be07810b54729d"
+        }
+      ]
+    },
+    "receive": {
+      "file": "catalog/sounds/zen/receive.mp3",
+      "durationMs": 409,
+      "sha256": "3a915e663bcdeb35dec1efd00c7f0a0fb52a1116637854f7eaa6bf0dad1db073",
+      "gain": 0.2,
+      "sources": [
+        {
+          "file": "catalog/sounds/zen/receive.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 409,
+          "sha256": "8078934c8ac1e31655d9a637389a2a8cf738ce91a277a877a06c166b5b0cf7db"
+        }
+      ]
+    },
+    "processing": {
+      "file": "catalog/sounds/zen/processing.mp3",
+      "durationMs": 1600,
+      "sha256": "e5d0d4ed4437cad4c905b31ddbb338a19affa8d12079b316d6a107bc27290118",
+      "gain": 0.08,
+      "sources": [
+        {
+          "file": "catalog/sounds/zen/processing.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 1600,
+          "sha256": "483f5a1ab4ccabc6e1d8bf46d44b4986ff32a3cad064f4517d29184559822c14"
+        }
+      ]
+    },
+    "complete": {
+      "file": "catalog/sounds/zen/complete.mp3",
+      "durationMs": 637,
+      "sha256": "50c332e62db4ffb1b08b3ed5481ac14cc0cd086309c69313a58e2540bf9a59cc",
+      "gain": 0.24,
+      "sources": [
+        {
+          "file": "catalog/sounds/zen/complete.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 637,
+          "sha256": "5ead4accc6e997aea2c98fdb3b34469ac1ae3240041dcdf590540bdd12cc2778"
+        }
+      ]
+    },
+    "deleteConfirm": {
+      "file": "catalog/sounds/zen/delete.mp3",
+      "durationMs": 396,
+      "sha256": "1e97cf77558134ca7d2b28f4ae08883f8e82438c96012d0886c4c220b4708d3f",
+      "gain": 0.22,
+      "sources": [
+        {
+          "file": "catalog/sounds/zen/delete.ogg",
+          "mimeType": "audio/ogg; codecs=opus",
+          "durationMs": 396,
+          "sha256": "de251a80abb2cd4af11bb740fd803b27d906d087b155ff28ea89f20685584576"
+        }
+      ]
+    }
+  }
+}

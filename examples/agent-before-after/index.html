@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wubble UI Sounds - Before and After</title>
+    <style>
+      :root { color: #172033; background: #f4f7fb; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-width: 320px; }
+      main { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 64px; }
+      .eyebrow { margin: 0 0 10px; color: #0f766e; font-size: 12px; font-weight: 800; text-transform: uppercase; }
+      h1, h2, h3, p { margin-top: 0; letter-spacing: 0; }
+      h1 { max-width: 720px; margin-bottom: 12px; font-size: 34px; line-height: 1.12; }
+      .intro { max-width: 720px; margin-bottom: 28px; color: #475569; font-size: 17px; line-height: 1.55; }
+      .sound-control { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 28px; padding: 16px 18px; border: 1px solid #b8c8dc; border-radius: 8px; background: #fff; }
+      .sound-control label { display: flex; align-items: center; gap: 10px; font-weight: 750; }
+      .sound-control p { margin: 0; color: #51617a; font-size: 14px; line-height: 1.4; }
+      .comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+      .flow { border: 1px solid #c8d4e4; border-radius: 8px; background: #fff; overflow: hidden; }
+      .flow-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 18px; border-bottom: 1px solid #dfe7f1; }
+      .flow-header h2 { margin: 0; font-size: 18px; }
+      .tag { display: inline-flex; align-items: center; min-height: 24px; padding: 0 8px; border-radius: 4px; font-size: 12px; font-weight: 800; }
+      .tag.before { color: #5b3d0a; background: #fff0ca; }
+      .tag.after { color: #075c55; background: #d9f4ec; }
+      .workspace { padding: 18px; }
+      .workspace-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+      .workspace-head h3 { margin-bottom: 4px; font-size: 18px; }
+      .workspace-head p { margin: 0; color: #62718a; font-size: 14px; line-height: 1.45; }
+      .state { padding: 6px 8px; border: 1px solid #d4deeb; border-radius: 4px; color: #51617a; font-size: 12px; font-weight: 750; white-space: nowrap; }
+      .field { display: grid; gap: 8px; margin-bottom: 14px; }
+      .field label { font-size: 13px; font-weight: 750; }
+      input { min-height: 42px; width: 100%; border: 1px solid #9db0c7; border-radius: 6px; padding: 0 12px; color: #172033; background: #fff; font: inherit; }
+      input:focus-visible, button:focus-visible { outline: 3px solid #48a9dd; outline-offset: 2px; }
+      button { min-height: 42px; border: 1px solid #0d766e; border-radius: 6px; padding: 0 14px; color: #fff; background: #0d766e; font: inherit; font-weight: 750; cursor: pointer; }
+      button:hover:not(:disabled) { background: #0a655f; }
+      button:disabled { cursor: not-allowed; border-color: #9db0c7; color: #718096; background: #e7edf5; }
+      .event-log { min-height: 74px; margin-top: 18px; padding: 12px; border: 1px solid #dce5f0; border-radius: 6px; color: #3f4f66; background: #f8fafc; font-size: 14px; line-height: 1.45; }
+      .event-log strong { color: #172033; }
+      .event-log.success { border-color: #91d7c4; background: #effcf7; color: #1d6759; }
+      .event-catalog { margin-top: 24px; border: 1px solid #c8d4e4; border-radius: 8px; background: #fff; overflow: hidden; }
+      .catalog-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; padding: 20px; border-bottom: 1px solid #dfe7f1; }
+      .catalog-header h2 { margin-bottom: 6px; font-size: 20px; }
+      .catalog-header p { max-width: 650px; margin: 0; color: #51617a; line-height: 1.5; }
+      .event-columns, .event-row { display: grid; grid-template-columns: minmax(210px, 1.4fr) minmax(132px, .8fr) minmax(132px, .8fr); gap: 16px; align-items: center; }
+      .event-columns { padding: 12px 20px; border-bottom: 1px solid #dfe7f1; color: #61708a; background: #f8fafc; font-size: 12px; font-weight: 800; text-transform: uppercase; }
+      .event-list { margin: 0; padding: 0 20px; list-style: none; }
+      .event-row { min-height: 76px; border-bottom: 1px solid #e4ebf3; }
+      .event-row:last-child { border-bottom: 0; }
+      .event-name { display: grid; gap: 4px; }
+      .event-name strong { font-size: 14px; }
+      .event-name span { color: #61708a; font-size: 13px; line-height: 1.35; }
+      .event-row button { width: 100%; min-height: 38px; padding: 0 10px; font-size: 13px; }
+      .event-row .before-event { border-color: #aab9cb; color: #3f516a; background: #fff; }
+      .event-row .before-event:hover { border-color: #6e8097; background: #f8fafc; }
+      .event-row .after-event { border-color: #0d766e; background: #0d766e; }
+      .catalog-status { min-height: 48px; margin: 0; padding: 13px 20px; border-top: 1px solid #dfe7f1; color: #3f4f66; background: #f8fafc; font-size: 14px; line-height: 1.45; }
+      .evidence { margin-top: 24px; padding-top: 22px; border-top: 1px solid #d6e0eb; }
+      .evidence h2 { margin-bottom: 8px; font-size: 19px; }
+      .evidence p { margin-bottom: 12px; color: #51617a; line-height: 1.5; }
+      .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+      .step { min-height: 84px; padding: 14px; border-left: 3px solid #10847c; background: #eaf4f5; }
+      .step strong, .step span { display: block; }
+      .step strong { margin-bottom: 5px; font-size: 13px; }
+      .step span { color: #45606b; font-size: 13px; line-height: 1.4; }
+      @media (max-width: 760px) {
+        main { padding-top: 30px; }
+        h1 { font-size: 29px; }
+        .sound-control, .workspace-head { align-items: flex-start; flex-direction: column; }
+        .comparison, .steps { grid-template-columns: 1fr; }
+        .catalog-header { align-items: flex-start; flex-direction: column; }
+        .event-columns { display: none; }
+        .event-list { padding: 0 16px; }
+        .event-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 16px 0; }
+        .event-name { grid-column: 1 / -1; }
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "@wubble/manifest": "/packages/manifest/src/index.js",
+          "@wubble/sounds": "/packages/sounds/src/index.js",
+          "@wubble/ui-sounds": "/packages/cli/src/runtime.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">Developer workflow proof</p>
+      <h1>One real product action, before and after Wubble UI Sounds.</h1>
+      <p class="intro">Both flows preserve the same visible save state. The right-hand flow was scanned, approved, and patched through the local CLI; it adds local processing and success cues only after you enable sound.</p>
+
+      <section class="sound-control" aria-label="Sound setting">
+        <label><input id="sound-enabled" type="checkbox" /> Enable interface sounds for the after flow</label>
+        <p id="sound-status">Sound is off. The after flow remains fully usable.</p>
+      </section>
+
+      <section class="comparison" aria-label="Before and after comparison">
+        <article class="flow" aria-labelledby="before-heading">
+          <div class="flow-header"><h2 id="before-heading">Before</h2><span class="tag before">Visible feedback only</span></div>
+          <div class="workspace">
+            <div class="workspace-head"><div><h3>Release notes</h3><p>Draft updates are saved to the release workspace.</p></div><span id="before-state" class="state">Draft</span></div>
+            <div class="field"><label for="before-title">Release title</label><input id="before-title" value="August reliability update" /></div>
+            <button id="before-save" type="button">Save release notes</button>
+            <p id="before-log" class="event-log" aria-live="polite"><strong>Ready.</strong> Saving will show a visible state change, with no sound.</p>
+          </div>
+        </article>
+
+        <article class="flow" aria-labelledby="after-heading">
+          <div class="flow-header"><h2 id="after-heading">After</h2><span class="tag after">CLI-approved local cues</span></div>
+          <div class="workspace">
+            <div class="workspace-head"><div><h3>Release notes</h3><p>The same product action, with supplemental local audio.</p></div><span id="after-state" class="state">Draft</span></div>
+            <div class="field"><label for="after-title">Release title</label><input id="after-title" value="August reliability update" /></div>
+            <button id="after-save" type="button">Save release notes</button>
+            <p id="after-log" class="event-log" aria-live="polite"><strong>Ready.</strong> Enable sound, then save to hear processing followed by success.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="event-catalog" aria-labelledby="catalog-heading">
+        <div class="catalog-header">
+          <div>
+            <p class="eyebrow">Complete semantic pack</p>
+            <h2 id="catalog-heading">All 16 UI sound events, before and after</h2>
+            <p>Every row triggers the same visible product acknowledgement. The before side stays silent; the after side auditions the matching local cue. Enable sound once above, then work down the after column.</p>
+          </div>
+        </div>
+        <div class="event-columns" aria-hidden="true"><span>Product moment</span><span>Before</span><span>After</span></div>
+        <ol id="event-list" class="event-list"></ol>
+        <p id="catalog-status" class="catalog-status" aria-live="polite"><strong>Ready.</strong> Choose an event to compare its visible outcome with its local sound cue.</p>
+      </section>
+
+      <section class="evidence" aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading">What this proves</h2>
+        <p>This is an actual local project flow: the CLI found the async save handler, recorded an approval, generated a reviewable diff, and applied it only with an explicit confirmation. The audio files are served locally from this mock app.</p>
+        <div class="steps">
+          <div class="step"><strong>1. Audit</strong><span>Detected the meaningful async save outcome.</span></div>
+          <div class="step"><strong>2. Review</strong><span>Generated an exact patch preview and hash.</span></div>
+          <div class="step"><strong>3. Apply</strong><span>Added processing and success around the existing action.</span></div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/before.js"></script>
+    <script type="module" src="/src/sound-settings.js"></script>
+    <script type="module" src="/src/after.js"></script>
+    <script type="module" src="/src/event-comparison.js"></script>
+  </body>
+</html>

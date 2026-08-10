@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "pack": {
+    "id": "signal",
+    "revision": 1
+  },
+  "defaults": {
+    "gain": 0.55,
+    "maxConcurrentSounds": 1,
+    "policy": {
+      "interruptPolicy": "never",
+      "variantStrategy": "rotate"
+    }
+  },
+  "events": {
+    "tap": {
+      "file": "tap.wav",
+      "durationMs": 90,
+      "sha256": "eabf52c671d7b9a34b509e2d2a5e90dd2c3e35357720974fae6135212cfe5c82",
+      "gain": 0.36,
+      "policy": {
+        "cooldownMs": 110,
+        "priority": "low",
+        "intensity": "subtle",
+        "hapticIntent": "selection"
+      }
+    },
+    "toggleOn": {
+      "file": "toggleOn.wav",
+      "durationMs": 110,
+      "sha256": "9bd1c2b5eb476fabef5263705df49451a84986807df94d97176b9fd4be7dae4b",
+      "gain": 0.28,
+      "policy": {
+        "cooldownMs": 130,
+        "priority": "low",
+        "intensity": "subtle",
+        "hapticIntent": "selection"
+      }
+    },
+    "toggleOff": {
+      "file": "toggleOff.wav",
+      "durationMs": 110,
+      "sha256": "8f82d770ee10e2ed043cabe419ad9ef2780826f895afbeaa3e281f9ac5fb686a",
+      "gain": 0.28,
+      "policy": {
+        "cooldownMs": 130,
+        "priority": "low",
+        "intensity": "subtle",
+        "hapticIntent": "selection"
+      }
+    },
+    "select": {
+      "file": "select.wav",
+      "durationMs": 120,
+      "sha256": "ecaa9c89c69f2f4146aac44d3bf34d2dbc09467391579a6bfb1bbb588b55b819",
+      "gain": 0.28,
+      "policy": {
+        "cooldownMs": 120,
+        "priority": "low",
+        "intensity": "subtle",
+        "hapticIntent": "selection"
+      }
+    },
+    "open": {
+      "file": "open.wav",
+      "durationMs": 150,
+      "sha256": "3b97e50b8e274aa3b4956533d49fdca120baa75b377a0c447c0fb9142ba6921d",
+      "gain": 0.24,
+      "policy": {
+        "cooldownMs": 140,
+        "priority": "low",
+        "intensity": "subtle"
+      }
+    },
+    "close": {
+      "file": "close.wav",
+      "durationMs": 140,
+      "sha256": "ffc9f0d06d59dde217521e862b15be6f7adbbe6cd8e2385c80f19217c0fdbba2",
+      "gain": 0.24,
+      "policy": {
+        "cooldownMs": 140,
+        "priority": "low",
+        "intensity": "subtle"
+      }
+    },
+    "navigate": {
+      "file": "navigate.wav",
+      "durationMs": 120,
+      "sha256": "63f99aef7f99de9a6fe26add064ea61348c2a93697353e981de0d2f47e52b496",
+      "gain": 0.25,
+      "policy": {
+        "cooldownMs": 120,
+        "priority": "low",
+        "intensity": "subtle"
+      }
+    },
+    "success": {
+      "file": "success.wav",
+      "durationMs": 280,
+      "sha256": "328583ba824d5516ba5ed40a48f9883d1bb04cde70aff0ae440d2ad79f63c5bb",
+      "gain": 0.25,
+      "policy": {
+        "cooldownMs": 250,
+        "priority": "high",
+        "interruptPolicy": "lower-priority",
+        "hapticIntent": "success"
+      }
+    },
+    "error": {
+      "file": "error.wav",
+      "durationMs": 210,
+      "sha256": "c0dfb1d770d35c7e743ccb30055b954b62a164e57577a1cc4f5791b37b016e60",
+      "gain": 0.28,
+      "policy": {
+        "cooldownMs": 350,
+        "priority": "high",
+        "interruptPolicy": "always",
+        "intensity": "pronounced",
+        "hapticIntent": "error"
+      }
+    },
+    "warning": {
+      "file": "warning.wav",
+      "durationMs": 240,
+      "sha256": "0acacaaf4d73e0ee780dc80fe6b8a6fac38b44897c5477cc9a393b4c8a907e24",
+      "gain": 0.26,
+      "policy": {
+        "cooldownMs": 300,
+        "priority": "high",
+        "interruptPolicy": "lower-priority",
+        "hapticIntent": "warning"
+      }
+    },
+    "notify": {
+      "file": "notify.wav",
+      "durationMs": 180,
+      "sha256": "8093d999c73215722283cb38943c594529f8550707d4e0d1c4298e2bd279c99b",
+      "gain": 0.22,
+      "policy": {
+        "cooldownMs": 280,
+        "priority": "normal"
+      }
+    },
+    "send": {
+      "file": "send.wav",
+      "durationMs": 140,
+      "sha256": "ced41c5ffb1c871358bab62bfd78ac1c08ae47bcf2b0c906e4b89397fd18c805",
+      "gain": 0.24,
+      "policy": {
+        "cooldownMs": 160,
+        "priority": "normal"
+      }
+    },
+    "receive": {
+      "file": "receive.wav",
+      "durationMs": 170,
+      "sha256": "a4fe8c4470fc44cb1515e86954728e98545bb8cc6c911eb8993836b7edaee22d",
+      "gain": 0.23,
+      "policy": {
+        "cooldownMs": 180,
+        "priority": "normal"
+      }
+    },
+    "processing": {
+      "file": "processing.wav",
+      "durationMs": 360,
+      "sha256": "a072d4f58bc9eae6e9355a6cca9d4ba5959788c1862fb4ca17397ce133cb874f",
+      "gain": 0.15,
+      "policy": {
+        "cooldownMs": 600,
+        "priority": "low",
+        "intensity": "subtle"
+      }
+    },
+    "complete": {
+      "file": "complete.wav",
+      "durationMs": 300,
+      "sha256": "7158bb2c39940545e700cb78ee8ea874772df363b7d5f29fbad8b50e66365811",
+      "gain": 0.24,
+      "policy": {
+        "cooldownMs": 300,
+        "priority": "high",
+        "interruptPolicy": "lower-priority",
+        "hapticIntent": "success"
+      }
+    },
+    "deleteConfirm": {
+      "file": "deleteConfirm.wav",
+      "durationMs": 250,
+      "sha256": "25c20b47ca679b2225284481c62b30327cde6dba2a65cefce1f0b623b81c2d9e",
+      "gain": 0.22,
+      "policy": {
+        "cooldownMs": 320,
+        "priority": "high",
+        "interruptPolicy": "lower-priority",
+        "hapticIntent": "warning"
+      }
+    }
+  }
+}

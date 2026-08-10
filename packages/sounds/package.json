@@ -1,0 +1,25 @@
+{
+  "name": "@wubble/sounds",
+  "version": "0.0.0-development",
+  "description": "Local-first semantic UI sound playback for the web.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/wubbletech/wubble-ui-sound.git",
+  "homepage": "https://github.com/wubbletech/wubble-ui-sound#readme",
+  "bugs": "https://github.com/wubbletech/wubble-ui-sound/issues",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "@wubble/manifest": "0.0.0-development"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

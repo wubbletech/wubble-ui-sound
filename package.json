@@ -1,0 +1,34 @@
+{
+  "name": "wubble-ui-sounds-workspace",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wubbletech/wubble-ui-sound.git"
+  },
+  "homepage": "https://github.com/wubbletech/wubble-ui-sound#readme",
+  "bugs": {
+    "url": "https://github.com/wubbletech/wubble-ui-sound/issues"
+  },
+  "workspaces": [
+    "packages/*",
+    "examples/nextjs"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "generate:fixtures": "node scripts/generate-sample-assets.mjs",
+    "test": "npm run generate:fixtures && node --test tests/*.test.mjs",
+    "check": "node --check packages/manifest/src/index.js && node --check packages/sounds/src/index.js && node --check packages/react/src/index.js && node --check packages/react-native/src/index.js && node --check packages/react-native/src/expo.js && node --check packages/cli/src/add.js && node --check packages/cli/src/archive.js && node --check packages/cli/src/approval.js && node --check packages/cli/src/audit.js && node --check packages/cli/src/audit-evaluation.js && node --check packages/cli/src/patch-diff.js && node --check packages/cli/src/patch-preview.js && node --check packages/cli/src/patch-apply.js && node --check packages/cli/src/sound-plan.js && node --check packages/cli/src/index.js && node --check packages/cli/src/pack.js && node --check packages/core-pack/index.js && node --check packages/community-sfx/index.js && node --check examples/agent-before-after/src/event-comparison.js && node --check scripts/audit-evaluate.mjs && node --check scripts/serve-agent-demo.mjs && node --check scripts/generate-sample-assets.mjs && node --check scripts/import-community-sfx.mjs && node --check scripts/prepare-release-version.mjs && node --check scripts/verify-release-metadata.mjs && node --check scripts/release-smoke.mjs",
+    "community:import": "node scripts/import-community-sfx.mjs",
+    "audit:evaluate": "node scripts/audit-evaluate.mjs",
+    "demo:agent": "node scripts/serve-agent-demo.mjs",
+    "ui-sounds": "node packages/cli/src/index.js",
+    "release:version": "node scripts/prepare-release-version.mjs",
+    "release:verify-metadata": "node scripts/verify-release-metadata.mjs",
+    "release:smoke": "node scripts/release-smoke.mjs"
+  }
+}

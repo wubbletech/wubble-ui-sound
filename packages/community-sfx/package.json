@@ -1,0 +1,34 @@
+{
+  "name": "@wubble/community-sfx",
+  "version": "0.0.0-development",
+  "description": "An opt-in CC0 UI sound catalog with Wubble-compatible local export packs.",
+  "type": "module",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wubbletech/wubble-ui-sound.git",
+    "directory": "packages/community-sfx"
+  },
+  "homepage": "https://github.com/wubbletech/wubble-ui-sound#community-sfx-catalog",
+  "bugs": {
+    "url": "https://github.com/wubbletech/wubble-ui-sound/issues"
+  },
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    }
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "README.md",
+    "LICENSE-AUDIO",
+    "UPSTREAM-NOTICE.md",
+    "catalog",
+    "*.manifest.json"
+  ],
+  "engines": {
+    "node": ">=20"
+  }
+}

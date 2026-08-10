@@ -15,47 +15,110 @@
   <img src="https://img.shields.io/badge/workflow-review--first-FF6A28?style=flat-square" alt="Review-first workflow" />
 </p>
 
-Wubble gives product moments a stable semantic name, then ships the selected
-audio as local files owned and served by the application. No runtime service, no
-API key, and no source code leaves the developer's machine.
+Wubble scans **apps and websites** for meaningful interaction moments, recommends
+the right feedback, and lets developers approve a normal Git patch. The selected
+audio is shipped as local files owned and served by the application. No runtime
+service, no API key, and no source code leaves the developer's machine.
 
-## Add Sound in Minutes
+## Add Sound in Seconds
 
 ```bash
 npm install @wubble/ui-sounds
 npx wubble-ui-sounds add . --scope src/app,src/features --cache --setup
 ```
 
-The guided command inspects local source, groups recommendations by product
-flow, and creates a normal Git patch for review. It exports the compact 16-cue
-Core pack when needed, but never edits application source until the developer
-explicitly approves a reviewed change.
+Wubble does the discovery work: it scans local source, groups recommendations by
+app flow, explains each recommendation, and creates a normal Git patch for
+review. It never edits application source until the developer explicitly
+approves a reviewed change.
 
-## What You Get
+**The difference:** Wubble reads the app or website and proposes a sound plan;
+developers do not have to map every button, state, and outcome to an audio file
+by hand.
 
-- **16 essential cues:** tap, toggles, select, navigation, open/close, send and
-  receive, success, error, warning, notification, processing, completion, and
-  delete confirmation.
-- **Local assets:** compact MP3, WebM Opus, and AAC/M4A variants. The Core pack
-  stays within a 120 KiB cross-platform budget.
-- **Semantic runtime:** browser and React Native clients respect opt-in audio,
-  quiet contexts, reduced feedback, audio unlock rules, and visible feedback.
-- **Guided adoption:** a deterministic local scanner recommends high-confidence
-  placements and clearly leaves ambiguous moments for manual review.
+## The Full Sound Library
+
+The 16-cue Core pack is the **small export Wubble places in an app**, not the
+size of the library. The full CC0 catalog is available through
+[`@wubble/community-sfx`](packages/community-sfx/README.md).
+
+| Library | What it contains | What an app ships |
+| --- | --- | --- |
+| **Wubble Core** | 16 canonical app events in MP3, WebM Opus, and AAC/M4A | A compact, 120 KiB local pack |
+| **Wubble Community SFX** | **936 sound designs**: 78 semantic cues across 12 personalities, in both MP3 and Ogg | Only the chosen 16-cue personality export, up to 240 KB |
+
+The full catalog has not gone anywhere: it contains **1,872 portable audio
+files** because each of the 936 designs has MP3 and Ogg versions. Core keeps the
+default integration fast; the optional catalog gives teams a broad sonic palette
+without forcing every website or app to ship it all.
+
+## Why Wubble
+
+| Wubble handles | Developers retain |
+| --- | --- |
+| Finds likely feedback moments in local code | Final say on every sound and code change |
+| Recommends a cue, haptic, visual-only feedback, or no sound | Existing design and accessibility decisions |
+| Groups suggestions by app flow and writes a reviewable patch | Their normal Git review and deployment process |
+| Exports only selected local files | Full ownership of runtime delivery |
 
 ## Choose a Starting Point
 
 | You need | Start here |
 | --- | --- |
-| A compact, consistent baseline | `@wubble/ui-sounds` and the included Core pack |
-| A different product personality | [`@wubble/community-sfx`](packages/community-sfx/README.md), an optional CC0 catalog with 12 16-cue packs |
+| A compact, consistent baseline | `@wubble/ui-sounds` and the included 16-cue Core pack |
+| The complete library | [`@wubble/community-sfx`](packages/community-sfx/README.md): 936 sound designs across 12 personalities |
 | A working reference | [vanilla](examples/vanilla/), [Next.js](examples/nextjs/), or [React Native](examples/react-native/) examples |
-| Existing app recommendations | [`wubble-ui-sounds add`](#guided-add) or [`wubble-ui-sounds audit`](#sound-audit) |
+| Existing app recommendations | [`wubble-ui-sounds add`](#developer-workflow) or [`wubble-ui-sounds audit`](#developer-workflow) |
 
 The source code and documentation are licensed under [Apache-2.0](LICENSE).
 Audio assets have separate terms; see [Audio Licensing](AUDIO-LICENSES.md).
 
 ## Developer Workflow
+
+Wubble makes a recommendation; the developer makes the decision. The scan is a
+deterministic local structural analysis of JS, TS, JSX, and TSX. It does not use
+a hosted model, require an AI account, or upload application source.
+
+```mermaid
+flowchart LR
+    A["Choose a scope"] --> B["Scan local source"]
+    B --> C{"Meaningful UI moment?"}
+    C -->|"Clear"| D["Cue + reason + patch safety"]
+    C -->|"Ambiguous or noisy"| E["Haptic, visual-only, or none"]
+    D --> F["Review sound plan"]
+    E --> F
+    F --> G{"Approve?"}
+    G -->|"Yes"| H["Export local assets and a Git patch"]
+    G -->|"No"| I["No application source change"]
+```
+
+| What Wubble sees | What it recommends | What happens automatically |
+| --- | --- | --- |
+| Explicit client-side async success or failure | Semantic success, error, processing, or complete cue | A hash-bound, reviewable safe-patch candidate |
+| Sends, deletes, toggles, navigation, and toasts | A semantic cue or an explicit non-sound choice | Manual review by default |
+| Dense repeated controls or already-visible feedback | Haptic, visual-only, or no sound | No patch |
+| Existing Wubble integration | Nothing | It is skipped to avoid duplicate instrumentation |
+
+### Run the guided scan
+
+```bash
+npx wubble-ui-sounds add . --scope src/app,src/features --cache --setup
+```
+
+| Wubble writes locally | Why it matters |
+| --- | --- |
+| `sound-plan.md` | Recommendations grouped by app flow, with source context and rationale |
+| `recommended.patch` | A normal Git patch for safe, approved source changes |
+| `approved-plan.json` | The explicit decisions the developer made |
+| `patch-preview.json` | A hash-bound preview that protects changed files from accidental application |
+
+For a large codebase, narrow the scan with `--scope` and reuse unchanged results
+with `--cache`. Wubble ignores dependencies and generated output, skips files
+over 1 MiB, and stops at 4,000 source files rather than pretending an unlimited
+scan is reliable.
+
+<details>
+<summary><strong>Advanced CLI reference: explicit audits, previews, managed packs, and rollback</strong></summary>
 
 ### Guided Add
 
@@ -257,6 +320,8 @@ Use a checked-in or securely distributed JSON registry for routine releases. Its
 ```
 
 See [manifest compatibility](docs/MANIFEST_COMPATIBILITY.md) before changing the customer manifest contract.
+
+</details>
 
 ## Feedback Policy
 

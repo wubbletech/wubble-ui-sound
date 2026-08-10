@@ -413,8 +413,8 @@ function printExport(result) {
   for (const file of result.written) console.log(`+ ${file}`);
   for (const file of result.unchanged) console.log(`= ${file}`);
   console.log(result.platform === "react-native"
-    ? "Install @wubble/react-native in the target app, then import src/lib/wubble-ui-sounds.native.js."
-    : "Import @wubble/ui-sounds in the target app, then import src/lib/wubble-ui-sounds.js.");
+    ? "Install @wubbleai/react-native in the target app, then import src/lib/wubble-ui-sounds.native.js."
+    : "Import @wubbleai/ui-sounds in the target app, then import src/lib/wubble-ui-sounds.js.");
 }
 
 /** @param {{ approved: Array<any>, rejected: Array<any>, output: string, dryRun: boolean }} result */
@@ -522,8 +522,8 @@ function commandHelp(topic) {
 }
 
 function resolveIncludedSource(style) {
-  if (!style) return path.dirname(require.resolve("@wubble/core-pack/manifest"));
-  return path.join(path.dirname(require.resolve("@wubble/community-sfx")), `${style}.manifest.json`);
+  if (!style) return path.dirname(require.resolve("@wubbleai/core-pack/manifest"));
+  return path.join(path.dirname(require.resolve("@wubbleai/community-sfx")), `${style}.manifest.json`);
 }
 
 function formatDirection(packId) {

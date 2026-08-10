@@ -1,1 +1,1 @@
-export * from "@wubble/sounds";
+export * from "@wubbleai/sounds";

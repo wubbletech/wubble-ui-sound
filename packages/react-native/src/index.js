@@ -1,10 +1,10 @@
-import { assertValidManifest, feedbackPriorityRank, resolveFeedbackPolicy, selectFeedbackAsset } from "@wubble/manifest";
+import { assertValidManifest, feedbackPriorityRank, resolveFeedbackPolicy, selectFeedbackAsset } from "@wubbleai/manifest";
 
 /**
  * Creates a semantic feedback client for React Native. The app supplies bundled
  * asset resolution and an audio bridge, keeping playback local and provider-neutral.
- * @param {import("@wubble/manifest").FeedbackManifest} manifest
- * @param {{ assets: (file: string, asset: import("@wubble/manifest").FeedbackAssetVariant) => unknown, audio: { play: (asset: unknown, options: { volume: number, event: string, durationMs: number }) => Promise<{ stop: () => void | Promise<void>, finished: Promise<void> }> }, haptics?: { trigger: (intent: string, event: string) => void | Promise<void> }, enabled?: boolean, hapticsEnabled?: boolean, volume?: number, reducedFeedback?: boolean, quietMode?: boolean, onError?: (error: unknown) => void, random?: () => number, canPlayType?: (mimeType: string) => boolean | string }} options
+ * @param {import("@wubbleai/manifest").FeedbackManifest} manifest
+ * @param {{ assets: (file: string, asset: import("@wubbleai/manifest").FeedbackAssetVariant) => unknown, audio: { play: (asset: unknown, options: { volume: number, event: string, durationMs: number }) => Promise<{ stop: () => void | Promise<void>, finished: Promise<void> }> }, haptics?: { trigger: (intent: string, event: string) => void | Promise<void> }, enabled?: boolean, hapticsEnabled?: boolean, volume?: number, reducedFeedback?: boolean, quietMode?: boolean, onError?: (error: unknown) => void, random?: () => number, canPlayType?: (mimeType: string) => boolean | string }} options
  */
 export function createNativeFeedbackClient(manifest, options) {
   const validatedManifest = assertValidManifest(manifest);
@@ -29,7 +29,7 @@ export function createNativeFeedbackClient(manifest, options) {
     return true;
   }
 
-  /** @param {import("@wubble/manifest").FeedbackEvent} eventName */
+  /** @param {import("@wubbleai/manifest").FeedbackEvent} eventName */
   async function play(eventName) {
     if (!enabled) return { played: false, reason: "disabled" };
 
@@ -114,7 +114,7 @@ export function createNativeFeedbackClient(manifest, options) {
     quietMode = Boolean(value);
   }
 
-  /** @param {import("@wubble/manifest").ResolvedFeedbackPolicy} policy */
+  /** @param {import("@wubbleai/manifest").ResolvedFeedbackPolicy} policy */
   function makeRoom(policy) {
     if (activePlayback.size < maxConcurrentSounds) return true;
     if (policy.interruptPolicy === "never") return false;
@@ -166,7 +166,7 @@ export function createNativeFeedbackClient(manifest, options) {
   });
 }
 
-/** @param {import("@wubble/manifest").FeedbackAssetVariant} asset @param {(mimeType: string) => boolean | string} canPlayType */
+/** @param {import("@wubbleai/manifest").FeedbackAssetVariant} asset @param {(mimeType: string) => boolean | string} canPlayType */
 function selectPlayableSource(asset, canPlayType) {
   for (const source of asset.sources ?? []) {
     if (canPlayType(source.mimeType)) return source;

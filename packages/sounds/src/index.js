@@ -1,10 +1,10 @@
-import { assertValidManifest, feedbackPriorityRank, resolveFeedbackPolicy, selectFeedbackAsset } from "@wubble/manifest";
+import { assertValidManifest, feedbackPriorityRank, resolveFeedbackPolicy, selectFeedbackAsset } from "@wubbleai/manifest";
 
 /**
  * Creates a feedback client that only plays customer-hosted static assets.
  * Playback is disabled by default. The first enabled playback attempt may unlock browser audio
  * when it is called directly from a user gesture.
- * @param {import("@wubble/manifest").FeedbackManifest} manifest
+ * @param {import("@wubbleai/manifest").FeedbackManifest} manifest
  * @param {{ baseUrl?: string, enabled?: boolean, volume?: number, reducedFeedback?: boolean, quietMode?: boolean, onError?: (error: unknown) => void, onHapticIntent?: (intent: string, event: string) => void, random?: () => number, canPlayType?: (mimeType: string) => boolean | string }} [options]
  */
 export function createFeedbackClient(manifest, options = {}) {
@@ -52,7 +52,7 @@ export function createFeedbackClient(manifest, options = {}) {
     }
   }
 
-  /** @param {import("@wubble/manifest").FeedbackEvent} eventName */
+  /** @param {import("@wubbleai/manifest").FeedbackEvent} eventName */
   async function play(eventName) {
     if (!enabled || !hasBrowserAudio()) {
       return { played: false, reason: enabled ? "locked" : "disabled" };
@@ -143,7 +143,7 @@ export function createFeedbackClient(manifest, options = {}) {
     quietMode = Boolean(value);
   }
 
-  /** @param {import("@wubble/manifest").FeedbackPolicy} policy */
+  /** @param {import("@wubbleai/manifest").FeedbackPolicy} policy */
   function makeRoom(policy) {
     if (activeAudio.size < maxConcurrentSounds) return true;
     if (policy.interruptPolicy === "never") return false;
@@ -198,7 +198,7 @@ export function createFeedbackClient(manifest, options = {}) {
   });
 }
 
-/** @param {import("@wubble/manifest").FeedbackAssetVariant} asset @param {(mimeType: string) => boolean | string} canPlayType */
+/** @param {import("@wubbleai/manifest").FeedbackAssetVariant} asset @param {(mimeType: string) => boolean | string} canPlayType */
 function selectPlayableSource(asset, canPlayType) {
   for (const source of asset.sources ?? []) {
     if (canPlayType(source.mimeType)) return source;

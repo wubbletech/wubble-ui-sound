@@ -1,5 +1,5 @@
 {
-  "name": "@wubble/react-native",
+  "name": "@wubbleai/react-native",
   "version": "0.1.0",
   "description": "Local-first semantic UI feedback for React Native applications.",
   "type": "module",
@@ -21,7 +21,7 @@
     "src"
   ],
   "dependencies": {
-    "@wubble/manifest": "0.1.0"
+    "@wubbleai/manifest": "0.1.0"
   },
   "peerDependencies": {
     "expo-audio": ">=1.0.0",

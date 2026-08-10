@@ -1,6 +1,6 @@
 # Browser Matrix
 
-Run this checklist against a release candidate of `@wubble/sounds`, `@wubble/react`, and `@wubble/ui-sounds`. Record the actual package revision, device, browser version, and result for each row. Do not mark an untested combination as passed.
+Run this checklist against a release candidate of `@wubbleai/sounds`, `@wubbleai/react`, and `@wubbleai/ui-sounds`. Record the actual package revision, device, browser version, and result for each row. Do not mark an untested combination as passed.
 
 ## Required environments
 

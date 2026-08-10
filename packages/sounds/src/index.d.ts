@@ -1,4 +1,4 @@
-import type { FeedbackEvent, FeedbackManifest } from "@wubble/manifest";
+import type { FeedbackEvent, FeedbackManifest } from "@wubbleai/manifest";
 
 export type PlaybackResult =
   | { played: true }

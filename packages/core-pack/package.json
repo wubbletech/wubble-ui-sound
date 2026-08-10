@@ -1,5 +1,5 @@
 {
-  "name": "@wubble/core-pack",
+  "name": "@wubbleai/core-pack",
   "version": "0.1.0",
   "description": "Wubble Core, a compact 16-cue local UI feedback pack.",
   "type": "module",

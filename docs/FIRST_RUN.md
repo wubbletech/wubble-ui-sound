@@ -3,7 +3,7 @@
 The fastest useful path is one command from an application directory:
 
 ```bash
-npm install @wubble/ui-sounds
+npm install @wubbleai/ui-sounds
 npx wubble-ui-sounds start .
 ```
 

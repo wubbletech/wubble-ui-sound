@@ -1,5 +1,5 @@
 {
-  "name": "@wubble/manifest",
+  "name": "@wubbleai/manifest",
   "version": "0.1.0",
   "description": "Manifest schema and validation for Wubble UI Sounds.",
   "type": "module",

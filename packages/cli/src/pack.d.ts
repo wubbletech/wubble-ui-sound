@@ -1,4 +1,4 @@
-import type { FeedbackManifest } from "@wubble/manifest";
+import type { FeedbackManifest } from "@wubbleai/manifest";
 
 export interface PackEventReport {
   name: string;

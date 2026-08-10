@@ -1,9 +1,9 @@
 # Wubble Core Pack
 
-`@wubble/core-pack` contains the compact 16-cue Wubble Core feedback pack. It is an install-time asset package: the Wubble CLI copies its hashed local files into the developer's application. Customer applications do not call a Wubble service at playback time.
+`@wubbleai/core-pack` contains the compact 16-cue Wubble Core feedback pack. It is an install-time asset package: the Wubble CLI copies its hashed local files into the developer's application. Customer applications do not call a Wubble service at playback time.
 
 ```bash
-npm install @wubble/ui-sounds
+npm install @wubbleai/ui-sounds
 npx wubble-ui-sounds setup /absolute/path/to/your-app
 ```
 

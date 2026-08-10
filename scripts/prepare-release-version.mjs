@@ -13,13 +13,13 @@ const packageDirectories = [
 ];
 const dependencyWorkspaceDirectories = ["examples/nextjs"];
 const packageNames = new Set([
-  "@wubble/manifest",
-  "@wubble/sounds",
-  "@wubble/react",
-  "@wubble/react-native",
-  "@wubble/ui-sounds",
-  "@wubble/core-pack",
-  "@wubble/community-sfx"
+  "@wubbleai/manifest",
+  "@wubbleai/sounds",
+  "@wubbleai/react",
+  "@wubbleai/react-native",
+  "@wubbleai/ui-sounds",
+  "@wubbleai/core-pack",
+  "@wubbleai/community-sfx"
 ]);
 const [version, mode] = process.argv.slice(2);
 

@@ -38,20 +38,14 @@ by hand.
 
 ## One Install. The Full Wubble Library.
 
-Install `@wubble/ui-sounds` once. It includes the complete Wubble library; there
-is no second package for a developer to discover, compare, or install. Wubble
-keeps the catalog as a managed internal dependency so its CC0 provenance remains
-clear, while the public developer experience stays one package and one command.
+Install `@wubble/ui-sounds` once. It is one library, one command, and **936 sound
+designs** across 78 semantic cues and 12 personalities. Every design is available
+in MP3 and Ogg, for 1,872 portable audio files in total.
 
-| Library | What it contains | What an app ships |
-| --- | --- | --- |
-| **Default app pack** | 16 canonical app events in MP3, WebM Opus, and AAC/M4A | A compact, 120 KiB local pack |
-| **Full Wubble library** | **936 sound designs**: 78 semantic cues across 12 personalities, in both MP3 and Ogg | Only the chosen 16-cue personality export, up to 240 KB |
-
-The full catalog has not gone anywhere: it contains **1,872 portable audio
-files** because each of the 936 designs has MP3 and Ogg versions. Core keeps the
-default integration fast; the optional catalog gives teams a broad sonic palette
-without forcing every website or app to ship it all.
+Wubble automatically selects and exports the local files an app needs. Most apps
+ship a compact 16-cue set around 120 KiB; a chosen personality can use up to 240
+KB. Developers get the entire library without making their users download audio
+that the app will never play.
 
 ## Why Wubble
 
@@ -66,9 +60,9 @@ without forcing every website or app to ship it all.
 
 | You need | Start here |
 | --- | --- |
-| Any app or website | `npm install @wubble/ui-sounds` - the full library comes with it |
-| A compact, consistent output | Wubble exports the included 16-cue Core pack by default |
-| A specific sonic personality | Choose from the installed 936-design catalog when the app needs it |
+| Any app or website | `npm install @wubble/ui-sounds` - the complete library comes with it |
+| A compact app bundle | Wubble automatically exports only the relevant local files |
+| A distinct sonic personality | Wubble can select from all 936 designs when the app needs it |
 | A working reference | [vanilla](examples/vanilla/), [Next.js](examples/nextjs/), or [React Native](examples/react-native/) examples |
 | Existing app recommendations | [`wubble-ui-sounds add`](#developer-workflow) or [`wubble-ui-sounds audit`](#developer-workflow) |
 
@@ -125,7 +119,7 @@ scan is reliable.
 ### Guided Add
 
 For the shortest path, let the guided local workflow inspect the app and export
-the included local Core pack only when it is needed:
+the included local sound library only when it is needed:
 
 ```bash
 npx wubble-ui-sounds add /absolute/path/to/customer-app \
@@ -453,7 +447,7 @@ See [the accessibility contract](docs/ACCESSIBILITY.md) for the required applica
 
 ## Current status
 
-The local runtime, signed local archive verification/install/upgrade, web and React Native CLI exports, React bindings, examples, trusted-key registry, and ordered local codec sources are working. `@wubble/core-pack` is a compiled 16-cue release candidate with local MP3, WebM Opus, and AAC/M4A delivery assets. Before public publication, retain the source-license record privately, complete the remaining browser/device and accessibility matrix, configure registry publishing and release-key custody, and complete the operational release checks.
+The local runtime, signed local archive verification/install/upgrade, web and React Native CLI exports, React bindings, examples, trusted-key registry, and ordered local codec sources are working. Wubble exports a compiled 16-cue local delivery set with MP3, WebM Opus, and AAC/M4A assets when an app needs it. Before public publication, retain the source-license record privately, complete the remaining browser/device and accessibility matrix, configure registry publishing and release-key custody, and complete the operational release checks.
 
 ## Release Rehearsal
 
@@ -465,4 +459,4 @@ npm run release:version -- 0.1.0 --check
 npm run release:smoke
 ```
 
-The smoke command packs all six public packages, installs those exact artifacts into clean vanilla and Next.js projects, validates the installed Wubble Core pack, and builds the Next.js project. It never publishes. The GitHub release workflow performs the same verification first; its publish job requires the protected `npm-production` environment and complete release metadata.
+The smoke command packs all public packages, installs those exact artifacts into clean vanilla and Next.js projects, validates the installed local sound library, and builds the Next.js project. It never publishes. The GitHub release workflow performs the same verification first; its publish job requires the protected `npm-production` environment and complete release metadata.

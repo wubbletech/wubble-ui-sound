@@ -1,4 +1,12 @@
 node_modules/
+.env
+.env.*
+!.env.example
+.npmrc
+*.pem
+*.key
+*.p12
+*.mobileprovision
 .codex/
 .DS_Store
 coverage/

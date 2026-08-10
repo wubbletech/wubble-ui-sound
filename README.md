@@ -1,64 +1,61 @@
-# Wubble UI Sounds
+<p align="center">
+  <img src="assets/wubble-ui-sounds-banner.png" alt="Abstract Wubble UI Sounds waveform and interface system" width="100%" />
+</p>
 
-Wubble UI Sounds is a local-first feedback runtime for web and React Native applications. Install one package, export the included 16-cue Core pack into the app, and play semantic UI sounds from customer-owned local assets with no runtime service dependency.
+<h1 align="center">Wubble UI Sounds</h1>
 
-The source code and documentation are licensed under [Apache-2.0](LICENSE). Audio assets have separate license terms; see [Audio Licensing](AUDIO-LICENSES.md).
+<p align="center">
+  Semantic, local-first UI sound for web and React Native apps.
+</p>
 
-## Workspace
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/code-Apache--2.0-147D78?style=flat-square" alt="Apache-2.0 licensed code" /></a>
+  <img src="https://img.shields.io/badge/runtime-local--first-16263B?style=flat-square" alt="Local-first runtime" />
+  <img src="https://img.shields.io/badge/platform-web%20%2B%20React%20Native-147D78?style=flat-square" alt="Web and React Native" />
+  <img src="https://img.shields.io/badge/workflow-review--first-E5684B?style=flat-square" alt="Review-first workflow" />
+</p>
 
-- `@wubble/manifest`: manifest schema validation and shared event names.
-- `@wubble/sounds`: browser-safe semantic playback client.
-- `@wubble/react-native`: semantic React Native client with local asset and native bridge contracts.
-- `@wubble/ui-sounds`: the public runtime and CLI entry point.
-- `@wubble/core-pack`: the 16-cue Wubble Core delivery pack, with compact local MP3, WebM Opus, and AAC/M4A assets.
-- `@wubble/community-sfx`: an opt-in CC0 community catalog with 12 personalities and 12 Wubble-compatible 16-cue export packs.
-- `examples/vanilla`: a local browser demo and generated reference pack.
-- `scripts/generate-sample-assets.mjs`: deterministic WAV reference-fixture generator.
+Wubble gives product moments a stable semantic name, then ships the selected
+audio as local files owned and served by the application. No runtime service, no
+API key, and no source code leaves the developer's machine.
 
-## Try it
-
-```bash
-npm test
-npx serve .
-```
-
-Open `http://localhost:3000/examples/vanilla/`. Enable sound, then use the demo controls. The generated WAV files live under `examples/vanilla/public/wubble/signal/` and are served as local static assets.
-
-The reference pack covers `tap`, toggles, selection, navigation, open/close, success/error/warning, notifications, send/receive, processing, completion, and delete confirmation. These deterministic WAV files verify the SDK contract; they are not the publishable Wubble asset library. Production packs are approved and exported from the private Studio workflow.
-
-## Install
-
-The included Wubble Core pack contains hashed local files for all 16 semantic events and stays within a 120 KiB cross-platform budget.
+## Add Sound in Minutes
 
 ```bash
 npm install @wubble/ui-sounds
-npx wubble-ui-sounds setup
+npx wubble-ui-sounds add . --scope src/app,src/features --cache --setup
 ```
 
-Run `setup /absolute/path/to/customer-app` from elsewhere, or add `--platform react-native` for Metro-safe local assets. The app owns and serves the exported files; it makes no runtime Wubble request.
+The guided command inspects local source, groups recommendations by product
+flow, and creates a normal Git patch for review. It exports the compact 16-cue
+Core pack when needed, but never edits application source until the developer
+explicitly approves a reviewed change.
 
-## Community SFX Catalog
+## What You Get
 
-For a much larger catalog, developers can opt into `@wubble/community-sfx`. It
-preserves the upstream CC0 audio notice and keeps Wubble Core independent. The
-package contains the full MP3/Ogg catalog, while each personality export contains
-only the 16 Wubble semantic cues that a customer application needs:
+- **16 essential cues:** tap, toggles, select, navigation, open/close, send and
+  receive, success, error, warning, notification, processing, completion, and
+  delete confirmation.
+- **Local assets:** compact MP3, WebM Opus, and AAC/M4A variants. The Core pack
+  stays within a 120 KiB cross-platform budget.
+- **Semantic runtime:** browser and React Native clients respect opt-in audio,
+  quiet contexts, reduced feedback, audio unlock rules, and visible feedback.
+- **Guided adoption:** a deterministic local scanner recommends high-confidence
+  placements and clearly leaves ambiguous moments for manual review.
 
-```bash
-npm install @wubble/ui-sounds @wubble/community-sfx
-npx wubble-ui-sounds export \
-  --source node_modules/@wubble/community-sfx/minimal.manifest.json \
-  --target /absolute/path/to/customer-app
-```
+## Choose a Starting Point
 
-Choose `minimal`, `soft`, `glass`, `arcade`, `mechanical`, `organic`, `dreamy`,
-`scifi`, `rubber`, `cinematic`, `studio`, or `zen`. Community packs declare a 240
-KB local budget; Wubble Core stays at 120 KB. The customer still ships and serves
-only their selected local assets. See
-[`@wubble/community-sfx`](packages/community-sfx/README.md) for provenance and
-license details.
+| You need | Start here |
+| --- | --- |
+| A compact, consistent baseline | `@wubble/ui-sounds` and the included Core pack |
+| A different product personality | [`@wubble/community-sfx`](packages/community-sfx/README.md), an optional CC0 catalog with 12 16-cue packs |
+| A working reference | [vanilla](examples/vanilla/), [Next.js](examples/nextjs/), or [React Native](examples/react-native/) examples |
+| Existing app recommendations | [`wubble-ui-sounds add`](#guided-add) or [`wubble-ui-sounds audit`](#sound-audit) |
 
-## Developer workflow
+The source code and documentation are licensed under [Apache-2.0](LICENSE).
+Audio assets have separate terms; see [Audio Licensing](AUDIO-LICENSES.md).
+
+## Developer Workflow
 
 ### Guided Add
 
